@@ -29,7 +29,7 @@
     NSLog(@"BUTTON WAS CLICKED!!");
     
     UIAlertController * alert=   [UIAlertController
-                                  alertControllerWithTitle:@"Info"
+                                  alertControllerWithTitle:@"Overall Transactions"
                                   message:@"You are using UIAlertController"
                                   preferredStyle:UIAlertControllerStyleAlert];
     
