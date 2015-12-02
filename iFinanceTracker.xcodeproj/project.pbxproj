@@ -1,0 +1,613 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E84924D21C0BF28800F5B393 /* FifthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E84924D11C0BF28800F5B393 /* FifthViewController.m */; };
+		E84924D51C0CFE4E00F5B393 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E84924D41C0CFE4D00F5B393 /* LoginViewController.m */; };
+		E84924D81C0CFE8500F5B393 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E84924D71C0CFE8500F5B393 /* RegisterViewController.m */; };
+		E84924DB1C0CFF0100F5B393 /* PasswordRecoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E84924DA1C0CFF0100F5B393 /* PasswordRecoveryViewController.m */; };
+		E84924DE1C0CFF3700F5B393 /* AddAmountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E84924DD1C0CFF3700F5B393 /* AddAmountViewController.m */; };
+		E85791EB1C0131DC00AC8112 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E85791EA1C0131DC00AC8112 /* main.m */; };
+		E85791EE1C0131DC00AC8112 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E85791ED1C0131DC00AC8112 /* AppDelegate.m */; };
+		E85791F11C0131DC00AC8112 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E85791F01C0131DC00AC8112 /* FirstViewController.m */; };
+		E85791F41C0131DC00AC8112 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E85791F31C0131DC00AC8112 /* SecondViewController.m */; };
+		E85791F71C0131DC00AC8112 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E85791F51C0131DC00AC8112 /* Main.storyboard */; };
+		E85791F91C0131DC00AC8112 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E85791F81C0131DC00AC8112 /* Assets.xcassets */; };
+		E85791FC1C0131DC00AC8112 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E85791FA1C0131DC00AC8112 /* LaunchScreen.storyboard */; };
+		E85792071C0131DD00AC8112 /* iFinanceTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E85792061C0131DD00AC8112 /* iFinanceTrackerTests.m */; };
+		E85792121C0131DD00AC8112 /* iFinanceTrackerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E85792111C0131DD00AC8112 /* iFinanceTrackerUITests.m */; };
+		E85792271C013BCC00AC8112 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E85792261C013BCC00AC8112 /* ThirdViewController.m */; };
+		E857922A1C013C9300AC8112 /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E85792291C013C9300AC8112 /* FourthViewController.m */; };
+		E8DE35CA1C0D089B008C7554 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DE35C91C0D089B008C7554 /* UIKit.framework */; };
+		E8DE35CC1C0D08AE008C7554 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DE35CB1C0D08AE008C7554 /* Foundation.framework */; };
+		E8ECBB271C01589900E9D67C /* food icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E8ECBB261C01589900E9D67C /* food icon.png */; };
+		E8ECBB2B1C0159B400E9D67C /* misc icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E8ECBB281C0159B400E9D67C /* misc icon.png */; };
+		E8ECBB2C1C0159B400E9D67C /* personal icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E8ECBB291C0159B400E9D67C /* personal icon.png */; };
+		E8ECBB2D1C0159B400E9D67C /* transport icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E8ECBB2A1C0159B400E9D67C /* transport icon.png */; };
+		E8ECBB2F1C01631000E9D67C /* blue rect.png in Resources */ = {isa = PBXBuildFile; fileRef = E8ECBB2E1C01631000E9D67C /* blue rect.png */; };
+		E8ECBB311C01702800E9D67C /* overview icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E8ECBB301C01702800E9D67C /* overview icon.png */; };
+		E8ECBB331C01741500E9D67C /* add icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E8ECBB321C01741500E9D67C /* add icon.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E85792031C0131DD00AC8112 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E85791DE1C0131DC00AC8112 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E85791E51C0131DC00AC8112;
+			remoteInfo = iFinanceTracker;
+		};
+		E857920E1C0131DD00AC8112 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E85791DE1C0131DC00AC8112 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E85791E51C0131DC00AC8112;
+			remoteInfo = iFinanceTracker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E84924D01C0BF26E00F5B393 /* FifthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FifthViewController.h; sourceTree = "<group>"; };
+		E84924D11C0BF28800F5B393 /* FifthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FifthViewController.m; sourceTree = "<group>"; };
+		E84924D31C0CFE3200F5B393 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		E84924D41C0CFE4D00F5B393 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		E84924D61C0CFE6A00F5B393 /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		E84924D71C0CFE8500F5B393 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		E84924D91C0CFED700F5B393 /* PasswordRecoveryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordRecoveryViewController.h; sourceTree = "<group>"; };
+		E84924DA1C0CFF0100F5B393 /* PasswordRecoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordRecoveryViewController.m; sourceTree = "<group>"; };
+		E84924DC1C0CFF1C00F5B393 /* AddAmountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddAmountViewController.h; sourceTree = "<group>"; };
+		E84924DD1C0CFF3700F5B393 /* AddAmountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAmountViewController.m; sourceTree = "<group>"; };
+		E85791E61C0131DC00AC8112 /* iFinanceTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFinanceTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E85791EA1C0131DC00AC8112 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E85791EC1C0131DC00AC8112 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E85791ED1C0131DC00AC8112 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E85791EF1C0131DC00AC8112 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		E85791F01C0131DC00AC8112 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		E85791F21C0131DC00AC8112 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		E85791F31C0131DC00AC8112 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		E85791F61C0131DC00AC8112 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E85791F81C0131DC00AC8112 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E85791FB1C0131DC00AC8112 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E85791FD1C0131DC00AC8112 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E85792021C0131DD00AC8112 /* iFinanceTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iFinanceTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E85792061C0131DD00AC8112 /* iFinanceTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iFinanceTrackerTests.m; sourceTree = "<group>"; };
+		E85792081C0131DD00AC8112 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E857920D1C0131DD00AC8112 /* iFinanceTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iFinanceTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E85792111C0131DD00AC8112 /* iFinanceTrackerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iFinanceTrackerUITests.m; sourceTree = "<group>"; };
+		E85792131C0131DD00AC8112 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E85792251C013BAC00AC8112 /* ThirdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		E85792261C013BCC00AC8112 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		E85792281C013C4C00AC8112 /* FourthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
+		E85792291C013C9300AC8112 /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
+		E8DE35C71C0D088D008C7554 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E8DE35C91C0D089B008C7554 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E8DE35CB1C0D08AE008C7554 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E8ECBB261C01589900E9D67C /* food icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "food icon.png"; sourceTree = "<group>"; };
+		E8ECBB281C0159B400E9D67C /* misc icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "misc icon.png"; sourceTree = "<group>"; };
+		E8ECBB291C0159B400E9D67C /* personal icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "personal icon.png"; sourceTree = "<group>"; };
+		E8ECBB2A1C0159B400E9D67C /* transport icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transport icon.png"; sourceTree = "<group>"; };
+		E8ECBB2E1C01631000E9D67C /* blue rect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue rect.png"; sourceTree = "<group>"; };
+		E8ECBB301C01702800E9D67C /* overview icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "overview icon.png"; sourceTree = "<group>"; };
+		E8ECBB321C01741500E9D67C /* add icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add icon.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E85791E31C0131DC00AC8112 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8DE35CC1C0D08AE008C7554 /* Foundation.framework in Frameworks */,
+				E8DE35CA1C0D089B008C7554 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E85791FF1C0131DD00AC8112 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E857920A1C0131DD00AC8112 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E85791DD1C0131DC00AC8112 = {
+			isa = PBXGroup;
+			children = (
+				E8DE35CB1C0D08AE008C7554 /* Foundation.framework */,
+				E8DE35C91C0D089B008C7554 /* UIKit.framework */,
+				E8DE35C71C0D088D008C7554 /* QuartzCore.framework */,
+				E85791E81C0131DC00AC8112 /* iFinanceTracker */,
+				E85792051C0131DD00AC8112 /* iFinanceTrackerTests */,
+				E85792101C0131DD00AC8112 /* iFinanceTrackerUITests */,
+				E85791E71C0131DC00AC8112 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E85791E71C0131DC00AC8112 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E85791E61C0131DC00AC8112 /* iFinanceTracker.app */,
+				E85792021C0131DD00AC8112 /* iFinanceTrackerTests.xctest */,
+				E857920D1C0131DD00AC8112 /* iFinanceTrackerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E85791E81C0131DC00AC8112 /* iFinanceTracker */ = {
+			isa = PBXGroup;
+			children = (
+				E85791EC1C0131DC00AC8112 /* AppDelegate.h */,
+				E85791ED1C0131DC00AC8112 /* AppDelegate.m */,
+				E85791EF1C0131DC00AC8112 /* FirstViewController.h */,
+				E85791F01C0131DC00AC8112 /* FirstViewController.m */,
+				E85791F21C0131DC00AC8112 /* SecondViewController.h */,
+				E85791F31C0131DC00AC8112 /* SecondViewController.m */,
+				E85792251C013BAC00AC8112 /* ThirdViewController.h */,
+				E85792261C013BCC00AC8112 /* ThirdViewController.m */,
+				E85792281C013C4C00AC8112 /* FourthViewController.h */,
+				E85792291C013C9300AC8112 /* FourthViewController.m */,
+				E84924D01C0BF26E00F5B393 /* FifthViewController.h */,
+				E84924D11C0BF28800F5B393 /* FifthViewController.m */,
+				E84924D31C0CFE3200F5B393 /* LoginViewController.h */,
+				E84924D41C0CFE4D00F5B393 /* LoginViewController.m */,
+				E84924D61C0CFE6A00F5B393 /* RegisterViewController.h */,
+				E84924D71C0CFE8500F5B393 /* RegisterViewController.m */,
+				E84924D91C0CFED700F5B393 /* PasswordRecoveryViewController.h */,
+				E84924DA1C0CFF0100F5B393 /* PasswordRecoveryViewController.m */,
+				E84924DC1C0CFF1C00F5B393 /* AddAmountViewController.h */,
+				E84924DD1C0CFF3700F5B393 /* AddAmountViewController.m */,
+				E85791F51C0131DC00AC8112 /* Main.storyboard */,
+				E85791F81C0131DC00AC8112 /* Assets.xcassets */,
+				E85791FA1C0131DC00AC8112 /* LaunchScreen.storyboard */,
+				E85791FD1C0131DC00AC8112 /* Info.plist */,
+				E85791E91C0131DC00AC8112 /* Supporting Files */,
+			);
+			path = iFinanceTracker;
+			sourceTree = "<group>";
+		};
+		E85791E91C0131DC00AC8112 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E8ECBB321C01741500E9D67C /* add icon.png */,
+				E8ECBB2E1C01631000E9D67C /* blue rect.png */,
+				E8ECBB301C01702800E9D67C /* overview icon.png */,
+				E8ECBB281C0159B400E9D67C /* misc icon.png */,
+				E8ECBB291C0159B400E9D67C /* personal icon.png */,
+				E8ECBB2A1C0159B400E9D67C /* transport icon.png */,
+				E8ECBB261C01589900E9D67C /* food icon.png */,
+				E85791EA1C0131DC00AC8112 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E85792051C0131DD00AC8112 /* iFinanceTrackerTests */ = {
+			isa = PBXGroup;
+			children = (
+				E85792061C0131DD00AC8112 /* iFinanceTrackerTests.m */,
+				E85792081C0131DD00AC8112 /* Info.plist */,
+			);
+			path = iFinanceTrackerTests;
+			sourceTree = "<group>";
+		};
+		E85792101C0131DD00AC8112 /* iFinanceTrackerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E85792111C0131DD00AC8112 /* iFinanceTrackerUITests.m */,
+				E85792131C0131DD00AC8112 /* Info.plist */,
+			);
+			path = iFinanceTrackerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E85791E51C0131DC00AC8112 /* iFinanceTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E85792161C0131DD00AC8112 /* Build configuration list for PBXNativeTarget "iFinanceTracker" */;
+			buildPhases = (
+				E85791E21C0131DC00AC8112 /* Sources */,
+				E85791E31C0131DC00AC8112 /* Frameworks */,
+				E85791E41C0131DC00AC8112 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iFinanceTracker;
+			productName = iFinanceTracker;
+			productReference = E85791E61C0131DC00AC8112 /* iFinanceTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E85792011C0131DD00AC8112 /* iFinanceTrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E85792191C0131DD00AC8112 /* Build configuration list for PBXNativeTarget "iFinanceTrackerTests" */;
+			buildPhases = (
+				E85791FE1C0131DD00AC8112 /* Sources */,
+				E85791FF1C0131DD00AC8112 /* Frameworks */,
+				E85792001C0131DD00AC8112 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E85792041C0131DD00AC8112 /* PBXTargetDependency */,
+			);
+			name = iFinanceTrackerTests;
+			productName = iFinanceTrackerTests;
+			productReference = E85792021C0131DD00AC8112 /* iFinanceTrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E857920C1C0131DD00AC8112 /* iFinanceTrackerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E857921C1C0131DD00AC8112 /* Build configuration list for PBXNativeTarget "iFinanceTrackerUITests" */;
+			buildPhases = (
+				E85792091C0131DD00AC8112 /* Sources */,
+				E857920A1C0131DD00AC8112 /* Frameworks */,
+				E857920B1C0131DD00AC8112 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E857920F1C0131DD00AC8112 /* PBXTargetDependency */,
+			);
+			name = iFinanceTrackerUITests;
+			productName = iFinanceTrackerUITests;
+			productReference = E857920D1C0131DD00AC8112 /* iFinanceTrackerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E85791DE1C0131DC00AC8112 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Andy Wu";
+				TargetAttributes = {
+					E85791E51C0131DC00AC8112 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = AWT9PAE47B;
+					};
+					E85792011C0131DD00AC8112 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = R52DFB482J;
+						TestTargetID = E85791E51C0131DC00AC8112;
+					};
+					E857920C1C0131DD00AC8112 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = R52DFB482J;
+						TestTargetID = E85791E51C0131DC00AC8112;
+					};
+				};
+			};
+			buildConfigurationList = E85791E11C0131DC00AC8112 /* Build configuration list for PBXProject "iFinanceTracker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E85791DD1C0131DC00AC8112;
+			productRefGroup = E85791E71C0131DC00AC8112 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E85791E51C0131DC00AC8112 /* iFinanceTracker */,
+				E85792011C0131DD00AC8112 /* iFinanceTrackerTests */,
+				E857920C1C0131DD00AC8112 /* iFinanceTrackerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E85791E41C0131DC00AC8112 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8ECBB311C01702800E9D67C /* overview icon.png in Resources */,
+				E8ECBB331C01741500E9D67C /* add icon.png in Resources */,
+				E85791FC1C0131DC00AC8112 /* LaunchScreen.storyboard in Resources */,
+				E8ECBB271C01589900E9D67C /* food icon.png in Resources */,
+				E8ECBB2D1C0159B400E9D67C /* transport icon.png in Resources */,
+				E85791F91C0131DC00AC8112 /* Assets.xcassets in Resources */,
+				E8ECBB2B1C0159B400E9D67C /* misc icon.png in Resources */,
+				E85791F71C0131DC00AC8112 /* Main.storyboard in Resources */,
+				E8ECBB2F1C01631000E9D67C /* blue rect.png in Resources */,
+				E8ECBB2C1C0159B400E9D67C /* personal icon.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E85792001C0131DD00AC8112 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E857920B1C0131DD00AC8112 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E85791E21C0131DC00AC8112 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E84924D51C0CFE4E00F5B393 /* LoginViewController.m in Sources */,
+				E857922A1C013C9300AC8112 /* FourthViewController.m in Sources */,
+				E85791F41C0131DC00AC8112 /* SecondViewController.m in Sources */,
+				E85792271C013BCC00AC8112 /* ThirdViewController.m in Sources */,
+				E84924D81C0CFE8500F5B393 /* RegisterViewController.m in Sources */,
+				E85791EE1C0131DC00AC8112 /* AppDelegate.m in Sources */,
+				E84924DB1C0CFF0100F5B393 /* PasswordRecoveryViewController.m in Sources */,
+				E85791F11C0131DC00AC8112 /* FirstViewController.m in Sources */,
+				E84924D21C0BF28800F5B393 /* FifthViewController.m in Sources */,
+				E85791EB1C0131DC00AC8112 /* main.m in Sources */,
+				E84924DE1C0CFF3700F5B393 /* AddAmountViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E85791FE1C0131DD00AC8112 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E85792071C0131DD00AC8112 /* iFinanceTrackerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E85792091C0131DD00AC8112 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E85792121C0131DD00AC8112 /* iFinanceTrackerUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E85792041C0131DD00AC8112 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E85791E51C0131DC00AC8112 /* iFinanceTracker */;
+			targetProxy = E85792031C0131DD00AC8112 /* PBXContainerItemProxy */;
+		};
+		E857920F1C0131DD00AC8112 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E85791E51C0131DC00AC8112 /* iFinanceTracker */;
+			targetProxy = E857920E1C0131DD00AC8112 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E85791F51C0131DC00AC8112 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E85791F61C0131DC00AC8112 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E85791FA1C0131DC00AC8112 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E85791FB1C0131DC00AC8112 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E85792141C0131DD00AC8112 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E85792151C0131DD00AC8112 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E85792171C0131DD00AC8112 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = iFinanceTracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CIS4444.iFinanceTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E85792181C0131DD00AC8112 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = iFinanceTracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CIS4444.iFinanceTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E857921A1C0131DD00AC8112 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = iFinanceTrackerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Andy.Wu.iFinanceTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iFinanceTracker.app/iFinanceTracker";
+			};
+			name = Debug;
+		};
+		E857921B1C0131DD00AC8112 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = iFinanceTrackerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Andy.Wu.iFinanceTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iFinanceTracker.app/iFinanceTracker";
+			};
+			name = Release;
+		};
+		E857921D1C0131DD00AC8112 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = iFinanceTrackerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Andy.Wu.iFinanceTrackerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = iFinanceTracker;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		E857921E1C0131DD00AC8112 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = iFinanceTrackerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Andy.Wu.iFinanceTrackerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = iFinanceTracker;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E85791E11C0131DC00AC8112 /* Build configuration list for PBXProject "iFinanceTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E85792141C0131DD00AC8112 /* Debug */,
+				E85792151C0131DD00AC8112 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E85792161C0131DD00AC8112 /* Build configuration list for PBXNativeTarget "iFinanceTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E85792171C0131DD00AC8112 /* Debug */,
+				E85792181C0131DD00AC8112 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E85792191C0131DD00AC8112 /* Build configuration list for PBXNativeTarget "iFinanceTrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E857921A1C0131DD00AC8112 /* Debug */,
+				E857921B1C0131DD00AC8112 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E857921C1C0131DD00AC8112 /* Build configuration list for PBXNativeTarget "iFinanceTrackerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E857921D1C0131DD00AC8112 /* Debug */,
+				E857921E1C0131DD00AC8112 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E85791DE1C0131DC00AC8112 /* Project object */;
+}
