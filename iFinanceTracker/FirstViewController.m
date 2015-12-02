@@ -30,7 +30,7 @@
     NSLog(@"BUTTON WAS CLICKED!!");
     
     UIAlertController * alert=   [UIAlertController
-                                  alertControllerWithTitle:@"Info"
+                                  alertControllerWithTitle:@"Personal Transactions"
                                   message:@"You are using UIAlertController"
                                   preferredStyle:UIAlertControllerStyleAlert];
     
