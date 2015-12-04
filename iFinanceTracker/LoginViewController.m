@@ -19,6 +19,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    _username.placeholder = @"Username";
+    
+    _encryptPass.placeholder = @"Password";
+    _encryptPass.secureTextEntry = YES;
 }
 
 - (void)didReceiveMemoryWarning {
