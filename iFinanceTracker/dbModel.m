@@ -25,6 +25,7 @@
     NSURL *jsonFileUrl = [NSURL URLWithString:@"http://localhost:8888/services.php"];
     
     //Create the Request
+    //REMOVE IF OTHER CODE WORKS SUCCESSFULLY
     //NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:jsonFileUrl];
     
     //Create the URL Connection Session
@@ -36,6 +37,8 @@
                 // handle response
                 
             }] resume];
+    
+    //REMOVE IF OTHER CODE WORKS SUCCESSFULLY
     //NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     //NSURLSession *session = [NSURLSession sessionWithConfiguration:urlRequest delegate:self delegateQueue: nil];
 }
