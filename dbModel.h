@@ -23,13 +23,13 @@
 @property (nonatomic, strong) NSString * username;
 @property (nonatomic, strong) NSString * password;
 @property (nonatomic, strong) NSString * email;
-@property NSString * description;
-@property double * overall;
-@property double * monthly;
-@property double * personal;
-@property double * food;
-@property double * autotrans;
-@property double * misc;
+@property (nonatomic, strong) NSString * describe;
+@property (nonatomic, strong) NSString * overall;
+@property (nonatomic, strong) NSString * monthly;
+@property (nonatomic, strong) NSString * personal;
+@property (nonatomic, strong) NSString * food;
+@property (nonatomic, strong) NSString * autotrans;
+@property (nonatomic, strong) NSString * misc;
 @property (nonatomic, weak) id<dbModelProtocol> delegate;
 
 - (void)downloadItems;

@@ -1,0 +1,5 @@
+***INFO THAT CONNECTS DATABASE TO XCODE***
+
+https://www.captechconsulting.com/blogs/ios-7-tutorial-series--nsurlsession
+
+http://codewithchris.com/iphone-app-connect-to-mysql-database/
