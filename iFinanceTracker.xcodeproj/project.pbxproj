@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58E7B97C1C136FA600B1BD59 /* dbModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E7B97B1C136FA600B1BD59 /* dbModel.m */; };
 		E84924D21C0BF28800F5B393 /* FifthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E84924D11C0BF28800F5B393 /* FifthViewController.m */; };
 		E84924D51C0CFE4E00F5B393 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E84924D41C0CFE4D00F5B393 /* LoginViewController.m */; };
 		E84924D81C0CFE8500F5B393 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E84924D71C0CFE8500F5B393 /* RegisterViewController.m */; };
@@ -52,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		58E7B9771C136B0700B1BD59 /* dbModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dbModel.h; path = ../dbModel.h; sourceTree = "<group>"; };
+		58E7B97B1C136FA600B1BD59 /* dbModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dbModel.m; sourceTree = "<group>"; };
 		E84924D01C0BF26E00F5B393 /* FifthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FifthViewController.h; sourceTree = "<group>"; };
 		E84924D11C0BF28800F5B393 /* FifthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FifthViewController.m; sourceTree = "<group>"; };
 		E84924D31C0CFE3200F5B393 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -149,6 +152,8 @@
 		E85791E81C0131DC00AC8112 /* iFinanceTracker */ = {
 			isa = PBXGroup;
 			children = (
+				58E7B97B1C136FA600B1BD59 /* dbModel.m */,
+				58E7B9771C136B0700B1BD59 /* dbModel.h */,
 				E85791EC1C0131DC00AC8112 /* AppDelegate.h */,
 				E85791ED1C0131DC00AC8112 /* AppDelegate.m */,
 				E85791EF1C0131DC00AC8112 /* FirstViewController.h */,
@@ -358,6 +363,7 @@
 				E84924D81C0CFE8500F5B393 /* RegisterViewController.m in Sources */,
 				E85791EE1C0131DC00AC8112 /* AppDelegate.m in Sources */,
 				E84924DB1C0CFF0100F5B393 /* PasswordRecoveryViewController.m in Sources */,
+				58E7B97C1C136FA600B1BD59 /* dbModel.m in Sources */,
 				E85791F11C0131DC00AC8112 /* FirstViewController.m in Sources */,
 				E84924D21C0BF28800F5B393 /* FifthViewController.m in Sources */,
 				E85791EB1C0131DC00AC8112 /* main.m in Sources */,
