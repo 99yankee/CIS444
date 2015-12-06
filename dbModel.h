@@ -32,6 +32,7 @@
 @property (nonatomic, strong) NSString * misc;
 @property (nonatomic, weak) id<dbModelProtocol> delegate;
 
+
 - (void)downloadItems;
 
 @end

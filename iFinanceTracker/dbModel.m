@@ -84,6 +84,8 @@
         //Adds new data to the array responsible for holding the data
         [dataArray addObject:newdata];
         
+        NSLog(@"%@",jsonArray);
+        
     }
     
     // Ready to notify delegate that data is ready and pass back items

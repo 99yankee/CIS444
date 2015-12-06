@@ -7,7 +7,7 @@
 //
 
 #import "FirstViewController.h"
-
+#import "dbModel.h"
 
 //ViewController for Personal
 @interface FirstViewController ()
@@ -28,6 +28,10 @@
     UIView *myView = [[UIView alloc] initWithFrame:CGRectMake(20.0, 200.0, 1000.0, 1000.0)];
     [myView addSubview:test];
     [self.view addSubview:myView];
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

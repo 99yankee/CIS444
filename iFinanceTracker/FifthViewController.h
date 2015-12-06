@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "dbModel.h"
 
 //ViewController for Overall
-@interface FifthViewController : UIViewController
+@interface FifthViewController : UIViewController <dbModelProtocol>
 
 - (IBAction)viewTransactions:(UIButton *)sender;
 
