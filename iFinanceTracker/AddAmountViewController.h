@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 //ViewController for Adding an Amount
-@interface AddAmountViewController : UIViewController
+@interface AddAmountViewController : UIViewController <UITextViewDelegate>
+
 
 
 @end

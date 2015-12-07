@@ -12,6 +12,9 @@
 //ViewController for Adding an Amount
 @interface AddAmountViewController ()
 
+@property (strong, nonatomic) IBOutlet UITextView *descript;
+
+
 @end
 
 @implementation AddAmountViewController
@@ -19,6 +22,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    _descript.text = @"(Optional) Give a brief description.";
+    _descript.textColor = [UIColor lightGrayColor];
+    _descript.delegate = self;
+    
+    
+}
+
+- (BOOL) textViewShouldBeginEditing:(UITextView *)textView
+{
+    _descript.text = @"";
+    _descript.textColor = [UIColor blackColor];
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning {

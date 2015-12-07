@@ -23,13 +23,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
+    _amountSpent.text = @"100";
     
     //Used code from http://stackoverflow.com/questions/3421182/iphone-development-chart-from-google-api
     //This uses the google api pie chart and displays it
     UIImage *myimage = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString: @"http://chart.apis.google.com/chart?chs=350x190&cht=p3&chco=3072F3&chds=-5,100&chd=t:40,10,20,30&chdl=Personal%7CMisc%7CAuto%7CFood&chdlp=b&chl=Personal%7CMisc%7CAuto%7CFood&chma=0,10,5,25&chtt=Overall+Spending+Distribution"]]];
     UIImageView *test = [[UIImageView alloc] initWithImage:myimage];
-    UIView *myView = [[UIView alloc] initWithFrame:CGRectMake(20.0, 250.0, 1000.0, 1000.0)];
+    UIView *myView = [[UIView alloc] initWithFrame:CGRectMake(20.0, 250.0, 250.0, 250.0)];
     [myView addSubview:test];
     [self.view addSubview:myView];
     
@@ -48,6 +48,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+<<<<<<< Updated upstream
 -(void)itemsDownloaded:(NSArray *)items
 {
     //This method gets called once the items are finished downloading
@@ -57,6 +58,9 @@
 
 - (IBAction)viewTransactions:(UIButton *)sender {
     
+=======
+- (IBAction)viewOverallTransacts:(UIButton *)sender {
+>>>>>>> Stashed changes
     //I used code from this website http://hayageek.com/uialertcontroller-example-ios/#simple
     //This is used to pop up an alerter to show the transactions
     UIAlertController * alert=   [UIAlertController
@@ -77,6 +81,6 @@
     
     [alert addAction:ok];
     [self presentViewController:alert animated:YES completion:nil];
-    
 }
+
 @end

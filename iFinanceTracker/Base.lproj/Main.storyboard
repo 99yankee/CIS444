@@ -58,7 +58,7 @@
                                 </constraints>
                                 <state key="normal" title="Add Amount" image="add icon.png"/>
                                 <connections>
-                                    <segue destination="qmi-HZ-w1o" kind="showDetail" id="gFM-iF-lAx"/>
+                                    <segue destination="qmi-HZ-w1o" kind="showDetail" id="p1g-QB-mbh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAp-X8-uhN">
@@ -70,7 +70,7 @@
                                 </constraints>
                                 <state key="normal" title="View All Personal Transactions"/>
                                 <connections>
-                                    <action selector="viewTransactions:" destination="9pv-A4-QxB" eventType="touchUpInside" id="EQC-Lb-bWS"/>
+                                    <action selector="viewPersonalTransacts:" destination="9pv-A4-QxB" eventType="touchUpInside" id="WO3-Cn-LGT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -92,6 +92,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Personal" image="personal icon.png" selectedImage="personal icon.png" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="amountSpentPersonal" destination="o1z-lG-eTy" id="pAq-6E-DGx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -161,7 +164,7 @@
                                     <segue destination="49e-Tb-3d3" kind="showDetail" id="RW5-Dc-frz"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Give a brief description if you want." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qPT-hY-H6b">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="(Optional) Give a brief description." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qPT-hY-H6b">
                                 <rect key="frame" x="131" y="316" width="229" height="176"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -195,6 +198,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Rpl-vz-Rk1"/>
+                    <connections>
+                        <outlet property="descript" destination="qPT-hY-H6b" id="apA-jG-vop"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A9h-Am-5zx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -213,20 +219,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZT1-MK-lue">
-                                <rect key="frame" x="267" y="117" width="142" height="27"/>
+                                <rect key="frame" x="266" y="116" width="142" height="27"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POn-xb-K4Q">
-                                <rect key="frame" x="20" y="474" width="217" height="69"/>
-                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="69" id="38l-zw-pTp"/>
-                                    <constraint firstAttribute="width" constant="217" id="K4d-Dj-i1a"/>
-                                </constraints>
-                                <state key="normal" title="View All Food Transactions"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V19-S8-gTO">
                                 <rect key="frame" x="499" y="465" width="81" height="78"/>
                                 <constraints>
@@ -260,6 +257,18 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POn-xb-K4Q">
+                                <rect key="frame" x="20" y="474" width="217" height="69"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="38l-zw-pTp"/>
+                                    <constraint firstAttribute="width" constant="217" id="K4d-Dj-i1a"/>
+                                </constraints>
+                                <state key="normal" title="View All Food Transactions"/>
+                                <connections>
+                                    <action selector="viewFoodTransacts:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="0ig-hM-sBy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -272,6 +281,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Food" image="food icon.png" selectedImage="food icon.png" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="amountSpentFood" destination="ZT1-MK-lue" id="7g8-TF-aXy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -300,7 +312,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rcq-dl-Go7">
-                                <rect key="frame" x="265" y="136" width="147" height="27"/>
+                                <rect key="frame" x="260" y="136" width="147" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="L1L-bL-Dgf"/>
                                     <constraint firstAttribute="width" constant="147" id="hXo-Mc-erV"/>
@@ -348,13 +360,16 @@
                                     <constraint firstAttribute="height" constant="69" id="c5u-Uk-LpH"/>
                                 </constraints>
                                 <state key="normal" title="View All Misc. Transactions"/>
+                                <connections>
+                                    <action selector="viewMiscTransacts:" destination="W17-YR-9Xb" eventType="touchUpInside" id="KhE-9g-0T3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Xkq-kL-unU" firstAttribute="top" secondItem="XuA-d2-KWT" secondAttribute="bottom" constant="62" id="8S0-Fs-1XL"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Xkq-kL-unU" secondAttribute="leading" id="CRC-qt-szL"/>
-                            <constraint firstItem="Rcq-dl-Go7" firstAttribute="leading" secondItem="Mmf-IP-agQ" secondAttribute="trailing" constant="8" id="EdW-ad-Ked"/>
+                            <constraint firstItem="Rcq-dl-Go7" firstAttribute="leading" secondItem="Mmf-IP-agQ" secondAttribute="trailing" constant="3" id="EdW-ad-Ked"/>
                             <constraint firstItem="Mmf-IP-agQ" firstAttribute="leading" secondItem="Xkq-kL-unU" secondAttribute="trailing" constant="8" id="GZt-Mj-QeY"/>
                             <constraint firstItem="Z01-1z-caK" firstAttribute="top" secondItem="XuA-d2-KWT" secondAttribute="bottom" constant="8" id="Q83-W0-Hev"/>
                             <constraint firstItem="Z01-1z-caK" firstAttribute="centerX" secondItem="WOR-90-ESZ" secondAttribute="centerX" id="SrG-z8-VKr"/>
@@ -367,6 +382,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Misc" image="misc icon.png" selectedImage="misc icon.png" id="7AA-DS-ifD"/>
+                    <connections>
+                        <outlet property="amountSpentMisc" destination="Rcq-dl-Go7" id="2l9-tz-wD9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I9E-Os-LFm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -395,7 +413,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KqD-7W-PCv">
-                                <rect key="frame" x="276" y="140" width="147" height="27"/>
+                                <rect key="frame" x="274" y="140" width="147" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="147" id="7jr-OL-w6R"/>
                                     <constraint firstAttribute="height" constant="27" id="HiL-li-p2F"/>
@@ -443,11 +461,14 @@
                                     <constraint firstAttribute="width" constant="217" id="VUo-Kx-UqI"/>
                                 </constraints>
                                 <state key="normal" title="View All Atuo Transactions"/>
+                                <connections>
+                                    <action selector="viewAutoTransacts:" destination="jqz-YV-P8c" eventType="touchUpInside" id="uFc-71-A0X"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="KqD-7W-PCv" firstAttribute="leading" secondItem="1he-DR-Zz7" secondAttribute="trailing" constant="5" id="0BU-j0-Cup"/>
+                            <constraint firstItem="KqD-7W-PCv" firstAttribute="leading" secondItem="1he-DR-Zz7" secondAttribute="trailing" constant="3" id="0BU-j0-Cup"/>
                             <constraint firstItem="6yW-Ac-8fp" firstAttribute="top" secondItem="5Cg-1M-Dxe" secondAttribute="bottom" constant="8" id="C1M-y1-25c"/>
                             <constraint firstItem="DaC-DX-Rv9" firstAttribute="top" secondItem="SVc-XS-OLg" secondAttribute="bottom" constant="8" id="IG2-t9-EHv"/>
                             <constraint firstItem="1he-DR-Zz7" firstAttribute="leading" secondItem="zSY-yQ-hQd" secondAttribute="trailing" constant="-14" id="JJ8-Dw-ugj"/>
@@ -462,6 +483,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Auto &amp; Transportation" image="transport icon.png" selectedImage="transport icon.png" id="Jo5-Aq-wEW"/>
+                    <connections>
+                        <outlet property="amountSpentAuto" destination="KqD-7W-PCv" id="aXF-3d-ksz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VqB-o8-cJQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -486,13 +510,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfL-U2-M9f">
-                                <rect key="frame" x="226" y="115" width="13" height="24"/>
+                                <rect key="frame" x="255" y="115" width="13" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.9" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l71-uf-BYa">
-                                <rect key="frame" x="247" y="115" width="28" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l71-uf-BYa">
+                                <rect key="frame" x="269" y="115" width="119" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="119" id="Fsd-qc-9uZ"/>
+                                    <constraint firstAttribute="height" constant="24" id="ZBy-v8-rQ1"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -522,7 +550,7 @@
                                 </constraints>
                                 <state key="normal" title="View All Past Transactions"/>
                                 <connections>
-                                    <action selector="viewTransactions:" destination="5sF-1F-XNH" eventType="touchUpInside" id="aU9-Iq-fYL"/>
+                                    <action selector="viewOverallTransacts:" destination="5sF-1F-XNH" eventType="touchUpInside" id="0UB-SP-iDW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -532,10 +560,10 @@
                             <constraint firstItem="6Az-f6-PMI" firstAttribute="top" secondItem="ON1-pK-ycC" secondAttribute="bottom" constant="8" id="65M-sz-jau"/>
                             <constraint firstItem="zbP-JL-jHy" firstAttribute="centerX" secondItem="pht-lM-xTg" secondAttribute="centerX" id="Elh-1n-WdT"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Qyo-Z7-Rv4" secondAttribute="leading" id="PiV-Tp-ktt"/>
-                            <constraint firstItem="l71-uf-BYa" firstAttribute="leading" secondItem="mfL-U2-M9f" secondAttribute="trailing" constant="8" id="VMb-RX-2XY"/>
+                            <constraint firstItem="l71-uf-BYa" firstAttribute="leading" secondItem="mfL-U2-M9f" secondAttribute="trailing" constant="1" id="VMb-RX-2XY"/>
                             <constraint firstItem="l71-uf-BYa" firstAttribute="top" secondItem="zbP-JL-jHy" secondAttribute="bottom" constant="56" id="YNc-zu-6nB"/>
                             <constraint firstAttribute="leadingMargin" secondItem="ON1-pK-ycC" secondAttribute="leading" id="Yc6-GB-bZc"/>
-                            <constraint firstItem="mfL-U2-M9f" firstAttribute="leading" secondItem="ap7-i9-gqC" secondAttribute="trailing" constant="2" id="c6s-VA-Z9Z"/>
+                            <constraint firstItem="mfL-U2-M9f" firstAttribute="leading" secondItem="ap7-i9-gqC" secondAttribute="trailing" constant="31" id="c6s-VA-Z9Z"/>
                             <constraint firstItem="zbP-JL-jHy" firstAttribute="top" secondItem="mxl-Gl-OK7" secondAttribute="bottom" id="deI-fn-t3W"/>
                             <constraint firstAttribute="leadingMargin" secondItem="ap7-i9-gqC" secondAttribute="leading" id="hrn-hQ-BA1"/>
                             <constraint firstItem="ap7-i9-gqC" firstAttribute="top" secondItem="mxl-Gl-OK7" secondAttribute="bottom" constant="63" id="mlg-nQ-7oZ"/>
@@ -543,6 +571,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Overview" image="overview icon.png" selectedImage="overview icon.png" id="KVY-s8-QGH"/>
+                    <connections>
+                        <outlet property="amountSpent" destination="l71-uf-BYa" id="5ya-ne-z1S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="abg-Xw-Zcn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -970,8 +1001,12 @@
         <image name="transport icon.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1rc-2U-piD"/>
+        <segue reference="RW5-Dc-frz"/>
+        <segue reference="p1g-QB-mbh"/>
         <segue reference="qVA-kB-SEg"/>
+<<<<<<< Updated upstream
         <segue reference="vNu-RI-ZyZ"/>
+=======
+>>>>>>> Stashed changes
     </inferredMetricsTieBreakers>
 </document>

@@ -12,7 +12,9 @@
 //ViewController for Overall
 @interface FifthViewController : UIViewController <dbModelProtocol>
 
-- (IBAction)viewTransactions:(UIButton *)sender;
+- (IBAction)viewOverallTransacts:(UIButton *)sender;
+
+@property (strong, nonatomic) IBOutlet UILabel *amountSpent;
 
 
 @end

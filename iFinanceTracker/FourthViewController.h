@@ -11,5 +11,8 @@
 //ViewController for Misc.
 @interface FourthViewController : UIViewController
 
+- (IBAction)viewMiscTransacts:(UIButton *)sender;
+
+@property (strong, nonatomic) IBOutlet UILabel *amountSpentMisc;
 
 @end
