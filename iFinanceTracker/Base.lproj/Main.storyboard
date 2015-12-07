@@ -1004,9 +1004,7 @@
         <segue reference="RW5-Dc-frz"/>
         <segue reference="p1g-QB-mbh"/>
         <segue reference="qVA-kB-SEg"/>
-<<<<<<< Updated upstream
         <segue reference="vNu-RI-ZyZ"/>
-=======
->>>>>>> Stashed changes
+
     </inferredMetricsTieBreakers>
 </document>
