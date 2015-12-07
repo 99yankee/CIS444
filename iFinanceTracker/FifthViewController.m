@@ -48,7 +48,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-<<<<<<< Updated upstream
 -(void)itemsDownloaded:(NSArray *)items
 {
     //This method gets called once the items are finished downloading
@@ -57,10 +56,10 @@
 
 
 - (IBAction)viewTransactions:(UIButton *)sender {
-    
-=======
+}
+
+
 - (IBAction)viewOverallTransacts:(UIButton *)sender {
->>>>>>> Stashed changes
     //I used code from this website http://hayageek.com/uialertcontroller-example-ios/#simple
     //This is used to pop up an alerter to show the transactions
     UIAlertController * alert=   [UIAlertController

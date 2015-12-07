@@ -22,6 +22,7 @@
 - (void)downloadItems
 {
     //Download JSON
+    //Doubt that Localhost will work on my personal device.  Need new domain
     NSURL *jsonFileUrl = [NSURL URLWithString:@"http://localhost:8888/services.php"];
     
     //Create the Request
