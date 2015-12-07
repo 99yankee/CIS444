@@ -29,13 +29,7 @@
     UIView *myView = [[UIView alloc] initWithFrame:CGRectMake(20.0, 200.0, 250.0, 250)];
     [myView addSubview:test];
     [self.view addSubview:myView];
-    
-<<<<<<< Updated upstream
-    
-    
-    
-=======
->>>>>>> Stashed changes
+
 }
 
 - (void)didReceiveMemoryWarning {
