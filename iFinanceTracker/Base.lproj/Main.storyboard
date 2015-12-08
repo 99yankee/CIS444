@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qdS-Ts-ndY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qdS-Ts-ndY">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -709,6 +709,11 @@
                             <constraint firstItem="L5k-Q7-1Wj" firstAttribute="top" secondItem="TFo-UI-TDm" secondAttribute="bottom" constant="16" id="zt4-sv-J7b"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="email" destination="TFo-UI-TDm" id="QRi-Qx-YPc"/>
+                        <outlet property="password" destination="y5C-Zd-J4c" id="I5M-Bc-Box"/>
+                        <outlet property="username" destination="0EO-rK-Hi7" id="rZm-yt-zcc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="col-Vi-a7Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1001,10 +1006,8 @@
         <image name="transport icon.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RW5-Dc-frz"/>
-        <segue reference="p1g-QB-mbh"/>
-        <segue reference="qVA-kB-SEg"/>
         <segue reference="vNu-RI-ZyZ"/>
-
+        <segue reference="RW5-Dc-frz"/>
+        <segue reference="qVA-kB-SEg"/>
     </inferredMetricsTieBreakers>
 </document>
