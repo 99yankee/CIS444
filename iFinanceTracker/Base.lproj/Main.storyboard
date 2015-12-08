@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qdS-Ts-ndY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qdS-Ts-ndY">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -639,7 +639,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
-                                    <segue destination="qdS-Ts-ndY" kind="showDetail" id="qVA-kB-SEg"/>
+                                    <action selector="saveInfo:" destination="7Dc-Ok-V77" eventType="touchUpInside" id="tPo-RD-jG1"/>
+                                    <segue destination="qdS-Ts-ndY" kind="showDetail" id="5FI-jc-fZI"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6I5-3r-OPg">
@@ -717,7 +718,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="col-Vi-a7Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1798" y="-507"/>
+            <point key="canvasLocation" x="-1724" y="-537"/>
         </scene>
         <!--Item-->
         <scene sceneID="Cev-Ob-ogE">
@@ -1006,8 +1007,8 @@
         <image name="transport icon.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vNu-RI-ZyZ"/>
+        <segue reference="5FI-jc-fZI"/>
         <segue reference="RW5-Dc-frz"/>
-        <segue reference="qVA-kB-SEg"/>
+        <segue reference="ZyJ-jr-IGd"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -9,12 +9,15 @@
 #import <UIKit/UIKit.h>
 
 //ViewController for Registering
-@interface RegisterViewController : UIViewController
+@interface RegisterViewController : UIViewController <UITextFieldDelegate>
 
-@property (strong, nonatomic) IBOutlet UITextField *username;
+@property (weak, nonatomic) IBOutlet UITextField *username;
 
-@property (strong, nonatomic) IBOutlet UITextField *password;
+@property (weak, nonatomic) IBOutlet UITextField *password;
 
-@property (strong, nonatomic) IBOutlet UITextField *email;
+@property (weak, nonatomic) IBOutlet UITextField *email;
+
+- (IBAction)saveInfo:(id)sender;
+
 
 @end
