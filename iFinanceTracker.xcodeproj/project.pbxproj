@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		589EE5661C17640500934473 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 589EE5651C17640500934473 /* libsqlite3.tbd */; };
+		589EE5691C17647E00934473 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 589EE5681C17647E00934473 /* DBManager.m */; };
+		589EE56D1C1771B300934473 /* appdb.sql in Resources */ = {isa = PBXBuildFile; fileRef = 589EE56C1C1771B300934473 /* appdb.sql */; };
 		58E7B97C1C136FA600B1BD59 /* dbModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E7B97B1C136FA600B1BD59 /* dbModel.m */; };
 		E84924D21C0BF28800F5B393 /* FifthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E84924D11C0BF28800F5B393 /* FifthViewController.m */; };
 		E84924D51C0CFE4E00F5B393 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E84924D41C0CFE4D00F5B393 /* LoginViewController.m */; };
@@ -53,6 +56,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		589EE5651C17640500934473 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		589EE5671C17647D00934473 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		589EE5681C17647E00934473 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		589EE56C1C1771B300934473 /* appdb.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = appdb.sql; sourceTree = "<group>"; };
 		58E7B9771C136B0700B1BD59 /* dbModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dbModel.h; path = ../dbModel.h; sourceTree = "<group>"; };
 		58E7B97B1C136FA600B1BD59 /* dbModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dbModel.m; sourceTree = "<group>"; };
 		E84924D01C0BF26E00F5B393 /* FifthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FifthViewController.h; sourceTree = "<group>"; };
@@ -104,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				589EE5661C17640500934473 /* libsqlite3.tbd in Frameworks */,
 				E8DE35CC1C0D08AE008C7554 /* Foundation.framework in Frameworks */,
 				E8DE35CA1C0D089B008C7554 /* UIKit.framework in Frameworks */,
 			);
@@ -129,6 +137,8 @@
 		E85791DD1C0131DC00AC8112 = {
 			isa = PBXGroup;
 			children = (
+				589EE56C1C1771B300934473 /* appdb.sql */,
+				589EE5651C17640500934473 /* libsqlite3.tbd */,
 				E8DE35CB1C0D08AE008C7554 /* Foundation.framework */,
 				E8DE35C91C0D089B008C7554 /* UIKit.framework */,
 				E8DE35C71C0D088D008C7554 /* QuartzCore.framework */,
@@ -152,6 +162,8 @@
 		E85791E81C0131DC00AC8112 /* iFinanceTracker */ = {
 			isa = PBXGroup;
 			children = (
+				589EE5671C17647D00934473 /* DBManager.h */,
+				589EE5681C17647E00934473 /* DBManager.m */,
 				58E7B97B1C136FA600B1BD59 /* dbModel.m */,
 				58E7B9771C136B0700B1BD59 /* dbModel.h */,
 				E85791EC1C0131DC00AC8112 /* AppDelegate.h */,
@@ -325,6 +337,7 @@
 				E8ECBB311C01702800E9D67C /* overview icon.png in Resources */,
 				E8ECBB331C01741500E9D67C /* add icon.png in Resources */,
 				E85791FC1C0131DC00AC8112 /* LaunchScreen.storyboard in Resources */,
+				589EE56D1C1771B300934473 /* appdb.sql in Resources */,
 				E8ECBB271C01589900E9D67C /* food icon.png in Resources */,
 				E8ECBB2D1C0159B400E9D67C /* transport icon.png in Resources */,
 				E85791F91C0131DC00AC8112 /* Assets.xcassets in Resources */,
@@ -368,6 +381,7 @@
 				E84924D21C0BF28800F5B393 /* FifthViewController.m in Sources */,
 				E85791EB1C0131DC00AC8112 /* main.m in Sources */,
 				E84924DE1C0CFF3700F5B393 /* AddAmountViewController.m in Sources */,
+				589EE5691C17647E00934473 /* DBManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

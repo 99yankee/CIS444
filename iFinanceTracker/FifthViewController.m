@@ -38,6 +38,7 @@
     _dbModel = [[dbModel alloc] init];
     _dbModel.delegate = self;
     [_dbModel downloadItems];
+    NSLog(@"YIPPEE");
     NSLog(@"%@", _getItems);
     
     
