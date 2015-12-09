@@ -13,5 +13,6 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *username;
 @property (strong, nonatomic) IBOutlet UITextField *encryptPass;
+- (IBAction)signinClicked:(id)sender;
 
 @end

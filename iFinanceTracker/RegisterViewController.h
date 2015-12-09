@@ -19,5 +19,7 @@
 
 - (IBAction)saveInfo:(id)sender;
 
+@property (nonatomic) int recordIDToEdit;
+
 
 @end

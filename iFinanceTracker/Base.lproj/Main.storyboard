@@ -781,6 +781,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="signinClicked:" destination="qdS-Ts-ndY" eventType="touchUpInside" id="1M4-LL-aAN"/>
                                     <segue destination="49e-Tb-3d3" kind="showDetail" id="1rc-2U-piD"/>
                                 </connections>
                             </button>
@@ -1007,8 +1008,8 @@
         <image name="transport icon.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="1rc-2U-piD"/>
         <segue reference="5FI-jc-fZI"/>
-        <segue reference="RW5-Dc-frz"/>
         <segue reference="ZyJ-jr-IGd"/>
     </inferredMetricsTieBreakers>
 </document>
