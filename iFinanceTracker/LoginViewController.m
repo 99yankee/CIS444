@@ -31,14 +31,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)signinClicked:(id)sender {
-    NSInteger success = 0;
+- (IBAction)signIn:(UIButton *)sender {
+    //NSInteger success = 0;
     
     if([[self.username text] isEqualToString:@""] || [[self.encryptPass text] isEqualToString:@""] ) {
-        
+        //NSLog(@"ITS TRUE!");
         UIAlertController * alert=   [UIAlertController
                                       alertControllerWithTitle:@"Error!"
-                                      message:@"Empty username and/password field(s)!"
+                                      message:@"Empty username and/or password field(s)!"
                                       preferredStyle:UIAlertControllerStyleAlert];
         
         //This is the function to create the OK button on the alerter
@@ -54,9 +54,12 @@
         
         [alert addAction:ok];
         [self presentViewController:alert animated:YES completion:nil];
-
+        
         
     }
-    
+    else {
+        
+    }
 }
+
 @end
