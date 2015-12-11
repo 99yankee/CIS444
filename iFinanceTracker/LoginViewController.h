@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 
 //ViewController for Login
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController <UITextFieldDelegate>
 
-@property (strong, nonatomic) IBOutlet UITextField *username;
-@property (strong, nonatomic) IBOutlet UITextField *encryptPass;
+@property (weak, nonatomic) IBOutlet UITextField *username;
+@property (weak, nonatomic) IBOutlet UITextField *encryptPass;
 - (IBAction)signIn:(UIButton *)sender;
 
 

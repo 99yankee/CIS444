@@ -42,7 +42,7 @@
     
     NSString *query = [NSString stringWithFormat:@"update userInfo set password='%@' where username='%@' and email='%@'",self.passBox.text, self.userBox.text, self.emailBox.text];
     
-
+    //executes the custom query
     [self.dbManager executeQuery:query];
     
     // If the query was successfully executed then pop the view controller.

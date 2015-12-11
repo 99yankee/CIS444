@@ -9,9 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "LoginViewController.h"
 #import "FifthViewController.h"
+#import "DBManager.h"
+
 
 //ViewController for Login
 @interface LoginViewController ()
+
+@property (nonatomic, strong) DBManager *dbManager;
 
 @end
 
@@ -25,6 +29,12 @@
     
     _encryptPass.placeholder = @"Password";
     _encryptPass.secureTextEntry = YES;
+    
+    self.username.delegate = self;
+    self.encryptPass.delegate = self;
+
+    
+    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"appdb.sql"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,6 +44,15 @@
 
 - (IBAction)signIn:(UIButton *)sender {
     //NSInteger success = 0;
+ 
+    NSString *password = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", self.username.text];
+
+    NSArray *results = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:password]];
+    
+    password = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"password"]];
+    NSLog(@"%@",password);
+
+    
     
     if([[self.username text] isEqualToString:@""] || [[self.encryptPass text] isEqualToString:@""] ) {
         //NSLog(@"ITS TRUE!");
@@ -58,9 +77,15 @@
         
         
     }
-    else {
+    else if (password == self.encryptPass.text) {
         FifthViewController *fifth= [self.storyboard instantiateViewControllerWithIdentifier:@"tabbedView"];
         [self presentViewController:fifth animated:YES completion:nil];
+    }
+    
+    else
+    {
+        NSLog(@"Nope");
+        NSLog(@"%@",password);
     }
 }
 

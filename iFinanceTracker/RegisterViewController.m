@@ -52,7 +52,7 @@
     // If the query was successfully executed then pop the view controller.
     if (self.dbManager.affectedRows != 0) {
         NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
-        
+        NSLog(@"%@",query);
         // Pop the view controller.
         [self.navigationController popViewControllerAnimated:YES];
     }
