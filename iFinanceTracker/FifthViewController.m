@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "FifthViewController.h"
 #import "dbModel.h"
+#import "AddAmountViewController.h"
 
 //ViewController for Overall
 @interface FifthViewController ()
@@ -85,5 +86,6 @@
     [alert addAction:ok];
     [self presentViewController:alert animated:YES completion:nil];
 }
+
 
 @end

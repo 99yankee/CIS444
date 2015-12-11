@@ -240,7 +240,7 @@
                                 </constraints>
                                 <state key="normal" title="Add Amount" image="add icon.png"/>
                                 <connections>
-                                    <segue destination="qmi-HZ-w1o" kind="showDetail" id="Ieg-wk-etf"/>
+                                    <segue destination="qmi-HZ-w1o" kind="showDetail" identifier="Food" id="Ieg-wk-etf"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Total Amount Spent On Food This Month:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dQ6-9W-XmY">
@@ -337,7 +337,7 @@
                                 </constraints>
                                 <state key="normal" title="Add Amount" image="add icon.png"/>
                                 <connections>
-                                    <segue destination="qmi-HZ-w1o" kind="showDetail" id="ZyJ-jr-IGd"/>
+                                    <segue destination="qmi-HZ-w1o" kind="showDetail" identifier="Misc" id="ZyJ-jr-IGd"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Total Amount Spent miscellaneously This Month:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xkq-kL-unU">
@@ -438,7 +438,7 @@
                                 </constraints>
                                 <state key="normal" title="Add Amount" image="add icon.png"/>
                                 <connections>
-                                    <segue destination="qmi-HZ-w1o" kind="showDetail" id="vNu-RI-ZyZ"/>
+                                    <segue destination="qmi-HZ-w1o" kind="showDetail" identifier="Auto" id="vNu-RI-ZyZ"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Total Amount Spent On Auto &amp; Transportation This Month: " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zSY-yQ-hQd">
@@ -1019,6 +1019,6 @@
         <image name="transport icon.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="p1g-QB-mbh"/>
+        <segue reference="Ieg-wk-etf"/>
     </inferredMetricsTieBreakers>
 </document>

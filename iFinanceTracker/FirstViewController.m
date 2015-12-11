@@ -64,6 +64,9 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+// Used code from http://www.mysamplecode.com/2012/12/ios-passing-data-between-view-controllers.html
+// This method determines which viewcontroller it came from so that it fills out the category
+// in the Add Amount page.
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
     AddAmountViewController *transferViewController = segue.destinationViewController;
@@ -71,7 +74,6 @@
     NSLog(@"prepareForSegue: %@", segue.identifier);
     if([segue.identifier isEqualToString:@"Personal"])
     {
-        NSLog(@"ITS IN THE IF");
         transferViewController.fnameText = @"Personal";
         
         
