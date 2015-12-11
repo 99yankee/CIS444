@@ -11,6 +11,8 @@
 //ViewController for Adding an Amount
 @interface AddAmountViewController : UIViewController <UITextViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *whereYouCameFrom;
+@property (strong, nonatomic)          NSString *fnameText;
 
 
 @end

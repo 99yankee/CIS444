@@ -8,9 +8,13 @@
 
 #import "FirstViewController.h"
 #import "dbModel.h"
+#import "AddAmountViewController.h"
 
 //ViewController for Personal
-@interface FirstViewController ()
+@interface FirstViewController () {
+
+    NSString *firstView;
+}
 
 @end
 
@@ -59,4 +63,20 @@
     [alert addAction:ok];
     [self presentViewController:alert animated:YES completion:nil];
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    AddAmountViewController *transferViewController = segue.destinationViewController;
+    
+    NSLog(@"prepareForSegue: %@", segue.identifier);
+    if([segue.identifier isEqualToString:@"Personal"])
+    {
+        NSLog(@"ITS IN THE IF");
+        transferViewController.fnameText = @"Personal";
+        
+        
+    }
+    
+}
+
 @end

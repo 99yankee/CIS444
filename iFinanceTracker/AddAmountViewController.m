@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "AddAmountViewController.h"
 
+
 //ViewController for Adding an Amount
 @interface AddAmountViewController ()
 
 @property (strong, nonatomic) IBOutlet UITextView *descript;
+
 
 
 @end
@@ -23,10 +25,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    _descript.text = @"(Optional) Give a brief description.";
+    _descript.text = @"Give a brief description.";
     _descript.textColor = [UIColor lightGrayColor];
     _descript.delegate = self;
-    
+    self.whereYouCameFrom.text = self.fnameText;
     
 }
 
@@ -41,5 +43,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 @end

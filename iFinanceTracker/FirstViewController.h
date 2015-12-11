@@ -10,11 +10,12 @@
 
 
 //ViewController for Personal
-@interface FirstViewController : UIViewController
+@interface FirstViewController : UIViewController <UITextViewDelegate>
 
 - (IBAction)viewPersonalTransacts:(UIButton *)sender;
 
 @property (strong, nonatomic) IBOutlet UILabel *amountSpentPersonal;
+
 
 @end
 
