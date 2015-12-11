@@ -16,5 +16,7 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *amountSpent;
 
+@property (weak, nonatomic) IBOutlet UILabel *currentUserOverall;
+
 
 @end

@@ -14,5 +14,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *whereYouCameFrom;
 @property (strong, nonatomic)          NSString *fnameText;
 
+@property (weak, nonatomic) IBOutlet UILabel *currentUserAdd;
+
+
 
 @end

@@ -16,6 +16,9 @@
 - (IBAction)viewFoodTransacts:(UIButton *)sender;
 
 @property (strong, nonatomic) IBOutlet UILabel *amountSpentFood;
+@property (weak, nonatomic) IBOutlet UILabel *currentUserFood;
+
+
 
 @end
 
