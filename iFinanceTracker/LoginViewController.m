@@ -51,6 +51,10 @@
     
     password = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"password"]];
     NSLog(@"%@",password);
+    
+    
+    NSString *usernameData = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"username"]];
+    NSLog(@"%@",usernameData);
 
     
     
