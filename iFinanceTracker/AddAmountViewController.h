@@ -16,6 +16,9 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *currentUserAdd;
 
+@property (weak, nonatomic) IBOutlet UITextField *totalAmount;
 
+@property (weak, nonatomic) IBOutlet UITextView *descriptField;
+- (IBAction)addTotal:(UIButton *)sender;
 
 @end

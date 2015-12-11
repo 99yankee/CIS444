@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qdS-Ts-ndY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qdS-Ts-ndY">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -171,19 +171,9 @@
                                 </constraints>
                                 <state key="normal" title="OK"/>
                                 <connections>
-                                    <segue destination="49e-Tb-3d3" kind="showDetail" id="RW5-Dc-frz"/>
+                                    <action selector="addTotal:" destination="qmi-HZ-w1o" eventType="touchUpInside" id="oBy-kI-FNT"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="(Optional) Give a brief description." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qPT-hY-H6b">
-                                <rect key="frame" x="131" y="229" width="229" height="176"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="229" id="Hso-26-0ey"/>
-                                    <constraint firstAttribute="height" constant="176" id="cCF-W2-p9x"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgA-ua-vS0">
                                 <rect key="frame" x="122" y="160" width="164" height="43"/>
                                 <constraints>
@@ -206,6 +196,16 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="(Optional) Give a brief description." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qPT-hY-H6b">
+                                <rect key="frame" x="131" y="229" width="229" height="176"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="229" id="Hso-26-0ey"/>
+                                    <constraint firstAttribute="height" constant="176" id="cCF-W2-p9x"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -233,6 +233,8 @@
                     <connections>
                         <outlet property="currentUserAdd" destination="WIg-GB-J4V" id="AND-io-A5B"/>
                         <outlet property="descript" destination="qPT-hY-H6b" id="apA-jG-vop"/>
+                        <outlet property="descriptField" destination="qPT-hY-H6b" id="Fe4-Bd-lWi"/>
+                        <outlet property="totalAmount" destination="ODf-gm-jEG" id="VuV-Xe-zIs"/>
                         <outlet property="whereYouCameFrom" destination="cgA-ua-vS0" id="D1M-Iw-AAt"/>
                     </connections>
                 </viewController>
