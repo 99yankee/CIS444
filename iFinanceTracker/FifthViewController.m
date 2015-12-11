@@ -43,8 +43,33 @@
     NSLog(@"%@", _getItems);
     
     
+    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(anyAction:) name:@"getName" object:nil];
     
     
+    
+    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedNotification:) name:@"getName" object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedNotification:) name:@"TEST" object:nil];
+    
+}
+
+-(void) receiveTestNotify: (NSNotification *) notification
+{
+    if([[notification name] isEqualToString:@"TEST"])
+        NSLog(@"Successfully received Message!");
+}
+
+-(void) receivedNotification:(NSNotification*) notify
+{
+    NSString * userName = notify.name;
+    NSDictionary * info = [notify userInfo];
+    //FifthViewController *objectIWantToTransfer = [dict objectForKey:@"Name"];
+    NSLog(@"Overall: %@", info);
+    self.currentUserOverall.text = userName;
+}
+
+- (void) dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,7 +82,6 @@
     //This method gets called once the items are finished downloading
     _getItems = items;
 }
-
 
 - (IBAction)viewTransactions:(UIButton *)sender {
     

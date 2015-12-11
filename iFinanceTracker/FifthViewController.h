@@ -18,5 +18,10 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *currentUserOverall;
 
+@property (strong, nonatomic) NSString *fnameText;
+
+-(void) receivedNotification:(NSNotification*) notify;
+
+-(void) receiveTestNotify: (NSNotification *) notification;
 
 @end

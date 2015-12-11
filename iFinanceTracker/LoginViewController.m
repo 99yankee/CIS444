@@ -12,6 +12,7 @@
 #import "DBManager.h"
 
 
+
 //ViewController for Login
 @interface LoginViewController ()
 
@@ -35,6 +36,9 @@
 
     
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"appdb.sql"];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,11 +56,8 @@
     password = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"password"]];
     NSLog(@"%@",password);
     
-    
     NSString *usernameData = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"username"]];
     NSLog(@"%@",usernameData);
-
-    
     
     if([[self.username text] isEqualToString:@""] || [[self.encryptPass text] isEqualToString:@""] ) {
         //NSLog(@"ITS TRUE!");
@@ -82,6 +83,17 @@
         
     }
     else if (password == self.encryptPass.text) {
+        // Send Data
+        //NSDictionary *aDictionary = [[NSDictionary alloc] initWithObjectsAndKeys: usernameData, @"Name",nil];
+        /*NSDictionary * aDictionary = [NSDictionary dictionaryWithObject:usernameData forKey:@"Name"];
+        NSNotification * NotifyData = [[NSNotification alloc] initWithName:@"getName" object:nil userInfo:aDictionary];
+        
+        [[NSNotificationCenter defaultCenter] postNotification:NotifyData];
+        //[[NSNotificationCenter defaultCenter] postNotificationName:@"getName" object:nil userInfo:aDictionary];
+        */
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"TEST" object:self];
+        
         FifthViewController *fifth= [self.storyboard instantiateViewControllerWithIdentifier:@"tabbedView"];
         [self presentViewController:fifth animated:YES completion:nil];
     }
@@ -92,5 +104,6 @@
         NSLog(@"%@",password);
     }
 }
+
 
 @end
