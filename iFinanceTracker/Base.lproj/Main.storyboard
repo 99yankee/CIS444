@@ -639,8 +639,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
-                                    <action selector="saveInfo:" destination="7Dc-Ok-V77" eventType="touchUpInside" id="tPo-RD-jG1"/>
-                                    <segue destination="qdS-Ts-ndY" kind="showDetail" id="5FI-jc-fZI"/>
+                                    <action selector="saveInfo:" destination="7Dc-Ok-V77" eventType="touchUpInside" id="Eak-go-eye"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6I5-3r-OPg">
@@ -723,7 +722,7 @@
         <!--Item-->
         <scene sceneID="Cev-Ob-ogE">
             <objects>
-                <viewController id="qdS-Ts-ndY" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" id="qdS-Ts-ndY" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8s0-qm-6Tz"/>
                         <viewControllerLayoutGuide type="bottom" id="5kz-cA-1Eo"/>

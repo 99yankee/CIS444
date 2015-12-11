@@ -17,7 +17,9 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *email;
 
-- (IBAction)saveInfo:(id)sender;
+
+- (IBAction)saveInfo:(UIButton *)sender;
+
 
 @property (nonatomic) int recordIDToEdit;
 

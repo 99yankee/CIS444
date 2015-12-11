@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "RegisterViewController.h"
 #import "DBManager.h"
+#import "LoginViewController.h"
 
 //ViewController for Registering
 @interface RegisterViewController ()
@@ -41,23 +42,89 @@
 }
 
 
-
-- (IBAction)saveInfo:(id)sender {
-    // Prepare the query string.
-    NSString *query = [NSString stringWithFormat:@"insert into userInfo values('%@', '%@', '%@', null, null, null, null, null, null, null)", self.username.text, self.password.text, self.email.text];
+- (IBAction)saveInfo:(UIButton *)sender {
     
-    // Execute the query.
-    [self.dbManager executeQuery:query];
+    @try {
+        NSString *usernameData = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", self.username.text];
+        NSArray *results = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:usernameData]];
+        usernameData = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"username"]];
+        
+        UIAlertController * alert=   [UIAlertController
+                                      alertControllerWithTitle:@"Error!"
+                                      message:@"Username has been used brah"
+                                      preferredStyle:UIAlertControllerStyleAlert];
+        
+        //This is the function to create the OK button on the alerter
+        UIAlertAction* ok = [UIAlertAction
+                             actionWithTitle:@"OK"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                                 
+                             }];
+        
+        
+        [alert addAction:ok];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+    }
+    @catch (NSException *exception) {
+        if([[self.username text] isEqualToString:@""] || [[self.password text] isEqualToString:@""] ) {
+            //NSLog(@"ITS TRUE!");
+            UIAlertController * alert=   [UIAlertController
+                                          alertControllerWithTitle:@"Error!"
+                                          message:@"Empty username and/or password field(s)!"
+                                          preferredStyle:UIAlertControllerStyleAlert];
+            
+            //This is the function to create the OK button on the alerter
+            UIAlertAction* ok = [UIAlertAction
+                                 actionWithTitle:@"OK"
+                                 style:UIAlertActionStyleDefault
+                                 handler:^(UIAlertAction * action)
+                                 {
+                                     [alert dismissViewControllerAnimated:YES completion:nil];
+                                     
+                                 }];
+            
+            
+            [alert addAction:ok];
+            [self presentViewController:alert animated:YES completion:nil];
+            
+            
+        }
+        
+        
+        else{
+            
+            // Prepare the query string.
+            NSString *query = [NSString stringWithFormat:@"insert into userInfo values('%@', '%@', '%@', null, null, null, null, null, null, null)", self.username.text, self.password.text, self.email.text];
+            
+            // Execute the query.
+            [self.dbManager executeQuery:query];
+            
+            
+            // If the query was successfully executed then pop the view controller.
+            if (self.dbManager.affectedRows != 0) {
+                
+                
+                
+                NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
+                NSLog(@"%@",query);
+                // Pop the view controller.
+                [self.navigationController popViewControllerAnimated:YES];
+                
+                LoginViewController *backHome= [self.storyboard instantiateViewControllerWithIdentifier:@"Login"];
+                [self presentViewController:backHome animated:YES completion:nil];
+            }
+            else{
+                NSLog(@"Could not execute the query.");
+            }
+        }
+    }
     
-    // If the query was successfully executed then pop the view controller.
-    if (self.dbManager.affectedRows != 0) {
-        NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
-        NSLog(@"%@",query);
-        // Pop the view controller.
-        [self.navigationController popViewControllerAnimated:YES];
-    }
-    else{
-        NSLog(@"Could not execute the query.");
-    }
+  
 }
+    
+
 @end
