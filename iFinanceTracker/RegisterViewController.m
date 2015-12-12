@@ -71,7 +71,6 @@
     }
     @catch (NSException *exception) {
         if([[self.username text] isEqualToString:@""] || [[self.password text] isEqualToString:@""] ) {
-            //NSLog(@"ITS TRUE!");
             UIAlertController * alert=   [UIAlertController
                                           alertControllerWithTitle:@"Error!"
                                           message:@"Empty username and/or password field(s)!"
