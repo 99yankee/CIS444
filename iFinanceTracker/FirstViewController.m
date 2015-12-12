@@ -57,7 +57,7 @@ NSString *globalSumPersonal;
     @catch(NSException *exception)
     {
         filler = personalData;
-        _amountSpentPersonal.text = filler;
+        _amountSpentPersonal.text = globalSumPersonal;
         
     }
 

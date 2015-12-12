@@ -48,7 +48,7 @@ NSString *globalSumFood;
     @catch(NSException *exception)
     {
         filler = foodData;
-        _amountSpentFood.text = filler;
+        _amountSpentFood.text = globalSumFood;
         
     }
     
