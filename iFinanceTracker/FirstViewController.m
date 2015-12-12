@@ -28,7 +28,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    _amountSpentPersonal.text = @"200";
+    _amountSpentPersonal.text = @"0";
     //Used code from http://stackoverflow.com/questions/3421182/iphone-development-chart-from-google-api
     //This uses the google api bar graph and displays it
     UIImage *myimage = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString: @"http://chart.apis.google.com/chart?cht=bvo&chd=t:10,50,60,80,40&chl=Hello%7CWorld%7Chi&chs=300x200"]]];
@@ -61,10 +61,6 @@
         _amountSpentPersonal.text = filler;
         
     }
-    
-   
-    
-    
 
 }
 

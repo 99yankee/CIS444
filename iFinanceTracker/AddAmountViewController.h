@@ -13,6 +13,8 @@ extern NSString *globalPersonal;
 extern NSString *globalAuto;
 extern NSString *globalMisc;
 
+extern NSMutableArray *globalPersonalArray;
+
 
 
 //ViewController for Adding an Amount
