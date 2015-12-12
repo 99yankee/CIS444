@@ -50,9 +50,12 @@ NSString *globalUser;
 }
 
 - (IBAction)signIn:(UIButton *)sender {
+    //Gets the input for password even if it throws an error
     NSString *tempPass;
+    //Checks if the catch alerter is run
+    BOOL isCatch = FALSE;
     @try {
-    
+        
         NSString *password = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", self.username.text];
 
         NSArray *results = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:password]];
@@ -68,6 +71,7 @@ NSString *globalUser;
         
     }
     @catch (NSException *exception){
+        isCatch = true;
         UIAlertController * alert=   [UIAlertController
                                       alertControllerWithTitle:@"Error!"
                                       message:@"Incorrent or Misssing Username/Password."
@@ -89,16 +93,17 @@ NSString *globalUser;
         
         
     }
-    
-    if([[self.username text] isEqualToString:@""] || [[self.encryptPass text] isEqualToString:@""] ) {
-        //NSLog(@"ITS TRUE!");
-        UIAlertController * alert=   [UIAlertController
+    //This is to check if the the catch alerter has already run.
+    //This prevents two alerters from appearing at once and throwing a warning.
+    if(!isCatch) {
+        if([[self.username text] isEqualToString:@""] || [[self.encryptPass text] isEqualToString:@""] ) {
+            UIAlertController * alert=   [UIAlertController
                                       alertControllerWithTitle:@"Error!"
                                       message:@"Empty username and/or password field(s)!"
                                       preferredStyle:UIAlertControllerStyleAlert];
         
         //This is the function to create the OK button on the alerter
-        UIAlertAction* ok = [UIAlertAction
+            UIAlertAction* ok = [UIAlertAction
                              actionWithTitle:@"OK"
                              style:UIAlertActionStyleDefault
                              handler:^(UIAlertAction * action)
@@ -108,25 +113,26 @@ NSString *globalUser;
                              }];
         
         
-        [alert addAction:ok];
-        [self presentViewController:alert animated:YES completion:nil];
+            [alert addAction:ok];
+            [self presentViewController:alert animated:YES completion:nil];
         
         
-    }
-    else if (tempPass == self.encryptPass.text) {
+        }
+        else if (tempPass == self.encryptPass.text) {
         
-        globalUser = self.username.text;
+            globalUser = self.username.text;
         
-        FifthViewController *fifth= [self.storyboard instantiateViewControllerWithIdentifier:@"tabbedView"];
-        [self presentViewController:fifth animated:YES completion:nil];
-    }
+            FifthViewController *fifth= [self.storyboard instantiateViewControllerWithIdentifier:@"tabbedView"];
+            [self presentViewController:fifth animated:YES completion:nil];
+        }
     
-    else
-    {
-        NSLog(@"Nope");
-        NSLog(@"%@",tempPass);
+        else
+        {
+            NSLog(@"Nope");
+            NSLog(@"%@",tempPass);
+        }
+        
     }
 }
-
 
 @end
