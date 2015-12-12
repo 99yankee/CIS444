@@ -27,6 +27,7 @@ NSString *globalPersonal;
 NSString *globalAuto;
 NSString *globalMisc;
 
+
 @implementation AddAmountViewController
 
 - (void)viewDidLoad {
@@ -65,7 +66,6 @@ NSString *globalMisc;
     NSArray *resultsP = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:personalData]];
     globalPersonal = [[resultsP objectAtIndex:0]objectAtIndex:3];
     NSLog(@"Personal: %@", globalPersonal);
-    
     //////////////////////////////////////////////////////////////////////////////////////////////////
     
     NSString *foodData = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", globalUser];
