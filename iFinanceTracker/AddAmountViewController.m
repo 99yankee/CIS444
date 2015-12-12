@@ -10,6 +10,7 @@
 #import "AddAmountViewController.h"
 #import "FifthViewController.h"
 #import "DBManager.h"
+#import "LoginViewController.h"
 
 
 //ViewController for Adding an Amount
@@ -60,7 +61,8 @@
     // Prepare the query string.
     //NSString *query = [NSString stringWithFormat:@"insert into userInfo('%@', description) values('%f','%@');", self.whereYouCameFrom.text,[self.totalAmount.text doubleValue], self.descriptField.text];
     
-    NSString *query = [NSString stringWithFormat:@"update userInfo set '%@' = '%@' + '%f' and description = '%@' where username = 'Fun';", self.whereYouCameFrom.text, self.whereYouCameFrom.text, [self.totalAmount.text doubleValue], self.descriptField.text];
+    NSString *query = [NSString stringWithFormat:@"update userInfo set '%@' = '%@' + '%f' and description = '%@' where username = '%@';", self.whereYouCameFrom.text, self.whereYouCameFrom.text, [self.totalAmount.text doubleValue], self.descriptField.text, globalUser];
+    
     // Execute the query.
     [self.dbManager executeQuery:query];
     
