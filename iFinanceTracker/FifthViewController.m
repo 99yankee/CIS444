@@ -57,7 +57,7 @@
     // Initialize the dbManager object.
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"appdb.sql"];
  
-    
+    //Sets the fields on the Overall Page
     self.personalField.text = globalPersonal;
     self.foodField.text = globalFood;
     self.autoField.text = globalAuto;
