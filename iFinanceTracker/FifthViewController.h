@@ -20,6 +20,11 @@
 
 @property (strong, nonatomic) NSString *fnameText;
 
+@property (weak, nonatomic) IBOutlet UILabel *personalField;
+@property (weak, nonatomic) IBOutlet UILabel *foodField;
+@property (weak, nonatomic) IBOutlet UILabel *autoField;
+@property (weak, nonatomic) IBOutlet UILabel *miscField;
+
 
 
 @end

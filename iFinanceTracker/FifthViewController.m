@@ -33,6 +33,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     _amountSpent.text = @"100";
     
+    /*
     //Used code from http://stackoverflow.com/questions/3421182/iphone-development-chart-from-google-api
     //This uses the google api pie chart and displays it
     UIImage *myimage = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString: @"http://chart.apis.google.com/chart?chs=350x190&cht=p3&chco=3072F3&chds=-5,100&chd=t:40,10,20,30&chdl=Personal%7CMisc%7CAuto%7CFood&chdlp=b&chl=Personal%7CMisc%7CAuto%7CFood&chma=0,10,5,25&chtt=Overall+Spending+Distribution"]]];
@@ -40,6 +41,8 @@
     UIView *myView = [[UIView alloc] initWithFrame:CGRectMake(20.0, 250.0, 250.0, 250.0)];
     [myView addSubview:test];
     [self.view addSubview:myView];
+     
+     */
     
     
     _getItems = [[NSArray alloc] init];
@@ -49,11 +52,16 @@
     NSLog(@"YIPPEE");
     NSLog(@"%@", _getItems);
     NSLog(@"%@", globalUser);
+    NSLog(@"%@", globalPersonal);
+    
+    
     
     
     // Initialize the dbManager object.
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"appdb.sql"];
+ 
     
+    self.personalField.text = globalPersonal;
 }
 
 - (void)didReceiveMemoryWarning {
