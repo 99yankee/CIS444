@@ -70,7 +70,7 @@
         
     }
     @catch (NSException *exception) {
-        if([[self.username text] isEqualToString:@""] || [[self.password text] isEqualToString:@""] ) {
+        if([[self.username text] isEqualToString:@""] || [[self.password text] isEqualToString:@""]  || [[self.email text] isEqualToString:@""]) {
             UIAlertController * alert=   [UIAlertController
                                           alertControllerWithTitle:@"Error!"
                                           message:@"Empty username and/or password field(s)!"
