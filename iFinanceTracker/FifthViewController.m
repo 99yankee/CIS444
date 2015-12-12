@@ -12,6 +12,10 @@
 #import "AddAmountViewController.h"
 #import "DBManager.h"
 #import "LoginViewController.h"
+#import "FirstViewController.h"
+#import "ThirdViewController.h"
+#import "SecondViewController.h"
+#import "FourthViewController.h"
 
 //ViewController for Overall
 @interface FifthViewController ()
@@ -34,16 +38,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     _amountSpent.text = @"100";
     
-    /*
-    //Used code from http://stackoverflow.com/questions/3421182/iphone-development-chart-from-google-api
-    //This uses the google api pie chart and displays it
-    UIImage *myimage = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString: @"http://chart.apis.google.com/chart?chs=350x190&cht=p3&chco=3072F3&chds=-5,100&chd=t:40,10,20,30&chdl=Personal%7CMisc%7CAuto%7CFood&chdlp=b&chl=Personal%7CMisc%7CAuto%7CFood&chma=0,10,5,25&chtt=Overall+Spending+Distribution"]]];
-    UIImageView *test = [[UIImageView alloc] initWithImage:myimage];
-    UIView *myView = [[UIView alloc] initWithFrame:CGRectMake(20.0, 250.0, 250.0, 250.0)];
-    [myView addSubview:test];
-    [self.view addSubview:myView];
-     
-     */
+  
     
     
     _getItems = [[NSArray alloc] init];
@@ -58,11 +53,19 @@
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"appdb.sql"];
  
     //Sets the fields on the Overall Page
-    self.personalField.text = globalPersonal;
-    self.foodField.text = globalFood;
-    self.autoField.text = globalAuto;
-    self.miscField.text = globalMisc;
     
+    self.personalField.text = globalSumPersonal;
+    self.foodField.text = globalSumFood;
+    self.autoField.text = globalSumAuto;
+    self.miscField.text = globalSumMisc;
+    
+    
+}
+
+
+
+-(void) dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 extern NSString *globalUser;
+extern NSString *filler;
 
 //ViewController for Login
 @interface LoginViewController : UIViewController <UITextFieldDelegate>

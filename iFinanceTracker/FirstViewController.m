@@ -20,7 +20,10 @@
 @property (nonatomic, strong) DBManager *dbManager;
 
 
+
 @end
+
+NSString *globalSumPersonal;
 
 @implementation FirstViewController
 
@@ -29,30 +32,26 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     _amountSpentPersonal.text = @"0";
-    //Used code from http://stackoverflow.com/questions/3421182/iphone-development-chart-from-google-api
-    //This uses the google api bar graph and displays it
-    UIImage *myimage = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString: @"http://chart.apis.google.com/chart?cht=bvo&chd=t:10,50,60,80,40&chl=Hello%7CWorld%7Chi&chs=300x200"]]];
-    UIImageView *test = [[UIImageView alloc] initWithImage:myimage];
-    UIView *myView = [[UIView alloc] initWithFrame:CGRectMake(20.0, 200.0, 250.0, 250)];
-    [myView addSubview:test];
-    [self.view addSubview:myView];
+   
     
     NSLog(@"%@", globalUser);
     
     
     // Initialize the dbManager object.
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"appdb.sql"];
-    NSString *filler;
     NSString *personalData;
     NSInteger hold;
+    NSInteger b;
     
     @try {
     
         personalData = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", globalUser];
         NSArray *results = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:personalData]];
+        b = [filler intValue];
         filler = [[results objectAtIndex:0]objectAtIndex:3];
-        hold = [filler integerValue] + [globalPersonal integerValue];
-        _amountSpentPersonal.text = [NSString stringWithFormat:@"%ld", (long)hold];
+        hold = [filler integerValue] + [globalSumPersonal integerValue];
+        globalSumPersonal = [NSString stringWithFormat:@"%ld", (long)hold];
+        _amountSpentPersonal.text = [NSString stringWithFormat:@"%@", globalSumPersonal];
     }
     
     @catch(NSException *exception)
@@ -63,6 +62,7 @@
     }
 
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -18,5 +18,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *currentUserAuto;
 
+extern NSString *globalSumAuto;
 
 @end

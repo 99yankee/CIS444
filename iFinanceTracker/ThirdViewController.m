@@ -20,6 +20,8 @@
 
 @end
 
+NSString *globalSumAuto;
+
 @implementation ThirdViewController
 
 - (void)viewDidLoad {
@@ -28,23 +30,24 @@
     
     // Initialize the dbManager object.
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"appdb.sql"];
-    NSString *filler;
     NSInteger hold;
     NSString *autoData;
+    NSInteger b;
     @try {
         
         autoData = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", globalUser];
-        NSMutableArray *results = [[NSMutableArray alloc] initWithArray:[self.dbManager loadDataFromDB:autoData]];
-        //Found by using breakpoints
+        NSArray *results = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:autoData]];
+        b = [filler intValue];
         filler = [[results objectAtIndex:0]objectAtIndex:5];
-        hold = [filler integerValue] + [globalAuto integerValue];
-        _amountSpentAuto.text = [NSString stringWithFormat:@"%ld", (long)hold];
+        hold = [filler integerValue] + [globalSumAuto integerValue];
+        globalSumAuto = [NSString stringWithFormat:@"%ld", (long)hold];
+        _amountSpentAuto.text = [NSString stringWithFormat:@"%@", globalSumAuto];
     }
     
     @catch(NSException *exception)
     {
         filler = autoData;
-        _amountSpentAuto.text = filler;
+        _amountSpentAuto.text = globalSumAuto;
         
     }
 

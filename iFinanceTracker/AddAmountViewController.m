@@ -118,6 +118,8 @@ NSString *globalMisc;
 
 - (IBAction)addTotal:(UIButton *)sender {
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshview" object:nil];
+    
     //Prepare the query
     NSString *query = [NSString stringWithFormat:@"update userInfo set '%@'='%d' where username = '%@';",  self.whereYouCameFrom.text, [self.totalAmount.text intValue] + [self.whereYouCameFrom.text intValue], globalUser];
     
@@ -135,6 +137,8 @@ NSString *globalMisc;
         
         //Will print when the given query operates successfully
         NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
+        
+        
         // Pop the view controller.
         [self.navigationController popViewControllerAnimated:YES];
         

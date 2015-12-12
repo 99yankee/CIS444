@@ -20,6 +20,8 @@
 
 @end
 
+NSString *globalSumMisc;
+
 @implementation FourthViewController
 
 - (void)viewDidLoad {
@@ -30,23 +32,24 @@
     
     // Initialize the dbManager object.
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"appdb.sql"];
-    NSString *filler;
     NSInteger hold;
     NSString *miscData;
+    NSInteger b;
     @try {
         
         miscData = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", globalUser];
-        NSMutableArray *results = [[NSMutableArray alloc] initWithArray:[self.dbManager loadDataFromDB:miscData]];
-        //Found by using breakpoints
+        NSArray *results = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:miscData]];
+        b = [filler intValue];
         filler = [[results objectAtIndex:0]objectAtIndex:6];
-        hold = [filler integerValue] + [globalMisc integerValue];
-        _amountSpentMisc.text = [NSString stringWithFormat:@"%ld", (long)hold];
+        hold = [filler integerValue] + [globalSumMisc integerValue];
+        globalSumMisc = [NSString stringWithFormat:@"%ld", (long)hold];
+        _amountSpentMisc.text = [NSString stringWithFormat:@"%@", globalSumMisc];
     }
     
     @catch(NSException *exception)
     {
         filler = miscData;
-        _amountSpentMisc.text = filler;
+        _amountSpentMisc.text = globalSumMisc;
         
     }
     

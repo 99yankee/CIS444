@@ -19,6 +19,7 @@
 
 @end
 
+NSString *globalSumFood;
 
 @implementation SecondViewController
 
@@ -28,17 +29,20 @@
     
     // Initialize the dbManager object.
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"appdb.sql"];
-    NSString *filler;
     NSInteger hold;
     NSString *foodData;
+    NSInteger b;
     @try {
         
         foodData = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", globalUser];
-        NSMutableArray *results = [[NSMutableArray alloc] initWithArray:[self.dbManager loadDataFromDB:foodData]];
-        //Found by using breakpoints
+        NSArray *results = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:foodData]];
+        b = [filler intValue];
         filler = [[results objectAtIndex:0]objectAtIndex:4];
-        hold = [filler integerValue] + [globalFood integerValue];
-        _amountSpentFood.text = [NSString stringWithFormat:@"%ld", (long)hold];
+        hold = [filler integerValue] + [globalSumFood integerValue];
+        globalSumFood = [NSString stringWithFormat:@"%ld", (long)hold];
+        _amountSpentFood.text = [NSString stringWithFormat:@"%@", globalSumFood];
+        
+        
     }
     
     @catch(NSException *exception)

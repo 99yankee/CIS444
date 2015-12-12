@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 
+extern NSString *globalSumPersonal;
+
 //ViewController for Personal
 @interface FirstViewController : UIViewController <UITextViewDelegate>
 

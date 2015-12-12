@@ -18,6 +18,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *amountSpentFood;
 @property (weak, nonatomic) IBOutlet UILabel *currentUserFood;
 
+extern NSString *globalSumFood;
 
 
 @end

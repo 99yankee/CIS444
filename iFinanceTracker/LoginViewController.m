@@ -22,6 +22,8 @@
 @end
 
 NSString *globalUser;
+NSString *filler;
+
 
 @implementation LoginViewController
 
@@ -40,7 +42,9 @@ NSString *globalUser;
     
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"appdb.sql"];
     
+
     
+    filler = @"0";
     
 }
 

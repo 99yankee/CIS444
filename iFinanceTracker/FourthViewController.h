@@ -17,5 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *currentUserMisc;
 
+extern NSString *globalSumMisc;
+
 
 @end
