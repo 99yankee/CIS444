@@ -40,6 +40,7 @@
 
 - (IBAction)saveInfo:(id)sender {
     @try {
+        //gathers all data from the database for a specific user
         NSString *usernameData = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", self.userBox.text];
         NSArray *results = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:usernameData]];
         usernameData = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"username"]];
@@ -69,6 +70,7 @@
         
     }
     
+    //checks if any of th fields are empty
     if([[self.userBox text] isEqualToString:@""] || [[self.passBox text] isEqualToString:@""]  || [[self.emailBox text] isEqualToString:@""]) {
         UIAlertController * alert=   [UIAlertController
                                       alertControllerWithTitle:@"Error!"
@@ -92,7 +94,7 @@
         
     }
     else {
-
+        //if all fields are full and exist, allows the user to change their password
         NSString *query = [NSString stringWithFormat:@"update userInfo set password='%@' where username='%@' and email='%@'",self.passBox.text, self.userBox.text, self.emailBox.text];
         
         //executes the custom query
@@ -105,6 +107,7 @@
             // Pop the view controller.
             [self.navigationController popViewControllerAnimated:YES];
             
+            //sends the user back to the login page
             LoginViewController *home= [self.storyboard instantiateViewControllerWithIdentifier:@"Login"];
             [self presentViewController:home animated:YES completion:nil];
         }

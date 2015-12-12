@@ -33,9 +33,12 @@ NSString *globalMisc;
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    //Gives the description text box that light gray default text
     _descript.text = @"Give a brief description.";
     _descript.textColor = [UIColor lightGrayColor];
     _descript.delegate = self;
+    
+    //sets the category name
     self.whereYouCameFrom.text = self.fnameText;
     
     // Do any additional setup after loading the view, typically from a nib.
@@ -49,6 +52,15 @@ NSString *globalMisc;
     
     //////////////////////////////////////////////////////////////////////////////////////////////////
     
+    /*
+        These next chunks of code do what the indvidual view controllers do but now we are working with
+     adding monetary values.  When the user loads the addViewController, it will update the global variables
+     with the most recent value stored in the database.  When you run the app, you will notice that it
+     says that the query was executed successfully and that 4 rows were affected.  This happens because, as I
+     previously mentioned, we are updating the values of all four of the global variables when viewDidLoad is
+     called.
+    */
+        
     NSString *personalData = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", globalUser];
     NSArray *resultsP = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:personalData]];
     globalPersonal = [[resultsP objectAtIndex:0]objectAtIndex:3];
@@ -91,6 +103,7 @@ NSString *globalMisc;
 
 - (BOOL) textViewShouldBeginEditing:(UITextView *)textView
 {
+    //Sets the color for the description text view
     _descript.text = @"";
     _descript.textColor = [UIColor blackColor];
     return YES;
@@ -120,11 +133,12 @@ NSString *globalMisc;
     if (self.dbManager.affectedRows != 0) {
         
         
-        
+        //Will print when the given query operates successfully
         NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
         // Pop the view controller.
         [self.navigationController popViewControllerAnimated:YES];
         
+        //Sends the user back to the Overall spending page
         FifthViewController *backOne= [self.storyboard instantiateViewControllerWithIdentifier:@"tabbedView"];
         [self presentViewController:backOne animated:YES completion:nil];
     }
