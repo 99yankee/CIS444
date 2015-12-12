@@ -61,7 +61,11 @@
     // Prepare the query string.
     //NSString *query = [NSString stringWithFormat:@"insert into userInfo('%@', description) values('%f','%@');", self.whereYouCameFrom.text,[self.totalAmount.text doubleValue], self.descriptField.text];
     
-    NSString *query = [NSString stringWithFormat:@"update userInfo set '%@' = '%@' + '%f' and description = '%@' where username = '%@';", self.whereYouCameFrom.text, self.whereYouCameFrom.text, [self.totalAmount.text doubleValue], self.descriptField.text, globalUser];
+    NSString *query = [NSString stringWithFormat:@"update userInfo set '%@'='%d' where username = '%@';",  self.whereYouCameFrom.text, [self.totalAmount.text intValue] + [self.whereYouCameFrom.text intValue], globalUser];
+    
+    //NSString *query = [NSString stringWithFormat:@"insert into userInfo(username, '%@', description) values('%@','%d','%@');", self.whereYouCameFrom.text, globalUser, [self.totalAmount.text intValue], self.descriptField.text];
+    
+    //NSString *query; = [NSString stringWithFormat:@"update userInfo set '%@' = '%d' where username = '%@';", self.whereYouCameFrom.text, [self.totalAmount.text intValue], globalUser];
     
     // Execute the query.
     [self.dbManager executeQuery:query];

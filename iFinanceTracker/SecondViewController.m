@@ -8,9 +8,14 @@
 
 #import "SecondViewController.h"
 #import "AddAmountViewController.h"
+#import "LoginViewController.h"
+#import "dbModel.h"
+#import "DBManager.h"
 
 //ViewController for Food
 @interface SecondViewController ()
+
+@property (nonatomic, strong) DBManager *dbManager;
 
 @end
 
@@ -21,6 +26,30 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     _amountSpentFood.text = @"300";
+    
+    // Initialize the dbManager object.
+    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"appdb.sql"];
+    NSString *filler;
+    NSInteger hold;
+    NSString *foodData;
+    NSString *i = @"50";
+    @try {
+        
+        foodData = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", globalUser];
+        NSMutableArray *results = [[NSMutableArray alloc] initWithArray:[self.dbManager loadDataFromDB:foodData]];
+        //Found by using breakpoints
+        filler = [[results objectAtIndex:0]objectAtIndex:4];
+        hold = [filler integerValue] + [i integerValue];
+        _amountSpentFood.text = [NSString stringWithFormat:@"%ld", (long)hold];
+    }
+    
+    @catch(NSException *exception)
+    {
+        filler = foodData;
+        _amountSpentFood.text = filler;
+        
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -43,17 +43,19 @@
     // Initialize the dbManager object.
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"appdb.sql"];
     NSString *filler;
+    NSString *personalData;
     
     @try {
     
-    NSString *personalData = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", globalUser];
+    personalData = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", globalUser];
     NSArray *results = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:personalData]];
-    personalData = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"personal"]];
-    filler = personalData;
+    filler = [[results objectAtIndex:0]objectAtIndex:3];
+        _amountSpentPersonal.text = filler;
     }
     
     @catch(NSException *exception)
     {
+        filler = personalData;
         _amountSpentPersonal.text = filler;
         
     }
