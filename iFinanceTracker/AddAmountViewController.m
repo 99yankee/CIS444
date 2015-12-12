@@ -22,6 +22,8 @@
 
 @end
 
+NSString *globalFood;
+
 @implementation AddAmountViewController
 
 - (void)viewDidLoad {
@@ -39,6 +41,14 @@
     
     // Initialize the dbManager object.
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"appdb.sql"];
+    
+    
+    NSString *foodData = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", globalUser];
+    NSMutableArray *results = [[NSMutableArray alloc] initWithArray:[self.dbManager loadDataFromDB:foodData]];
+    //Found by using breakpoints
+    globalFood = [[results objectAtIndex:0]objectAtIndex:4];
+    NSLog(@"%@", globalFood);
+
     
 }
 
@@ -58,14 +68,10 @@
 
 - (IBAction)addTotal:(UIButton *)sender {
     
-    // Prepare the query string.
-    //NSString *query = [NSString stringWithFormat:@"insert into userInfo('%@', description) values('%f','%@');", self.whereYouCameFrom.text,[self.totalAmount.text doubleValue], self.descriptField.text];
-    
+    //Prepare the query
     NSString *query = [NSString stringWithFormat:@"update userInfo set '%@'='%d' where username = '%@';",  self.whereYouCameFrom.text, [self.totalAmount.text intValue] + [self.whereYouCameFrom.text intValue], globalUser];
     
-    //NSString *query = [NSString stringWithFormat:@"insert into userInfo(username, '%@', description) values('%@','%d','%@');", self.whereYouCameFrom.text, globalUser, [self.totalAmount.text intValue], self.descriptField.text];
     
-    //NSString *query; = [NSString stringWithFormat:@"update userInfo set '%@' = '%d' where username = '%@';", self.whereYouCameFrom.text, [self.totalAmount.text intValue], globalUser];
     
     // Execute the query.
     [self.dbManager executeQuery:query];

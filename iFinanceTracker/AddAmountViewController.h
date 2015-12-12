@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSString *globalFood;
 
 //ViewController for Adding an Amount
 @interface AddAmountViewController : UIViewController <UITextFieldDelegate, UITextViewDelegate>
