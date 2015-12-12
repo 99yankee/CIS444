@@ -21,6 +21,7 @@
 }
 
 @property (nonatomic, strong) DBManager *dbManager;
+@property NSString *overallSpent;
 
 @end
 
@@ -49,10 +50,6 @@
     _dbModel = [[dbModel alloc] init];
     _dbModel.delegate = self;
     [_dbModel downloadItems];
-    NSLog(@"YIPPEE");
-    NSLog(@"%@", _getItems);
-    NSLog(@"%@", globalUser);
-    NSLog(@"%@", globalPersonal);
     
     
     
@@ -62,6 +59,10 @@
  
     
     self.personalField.text = globalPersonal;
+    self.foodField.text = globalFood;
+    self.autoField.text = globalAuto;
+    self.miscField.text = globalMisc;
+    
 }
 
 - (void)didReceiveMemoryWarning {
