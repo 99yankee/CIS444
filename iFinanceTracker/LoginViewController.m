@@ -47,17 +47,45 @@
 }
 
 - (IBAction)signIn:(UIButton *)sender {
-    //NSInteger success = 0;
- 
-    NSString *password = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", self.username.text];
+    NSString *tempPass;
+    @try {
+    
+        NSString *password = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", self.username.text];
 
-    NSArray *results = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:password]];
+        NSArray *results = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:password]];
     
-    password = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"password"]];
-    NSLog(@"%@",password);
+        password = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"password"]];
+        NSLog(@"%@",password);
+        
+        tempPass = password;
     
-    NSString *usernameData = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"username"]];
-    NSLog(@"%@",usernameData);
+        NSString *usernameData = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"username"]];
+        NSLog(@"%@",usernameData);
+        
+        
+    }
+    @catch (NSException *exception){
+        UIAlertController * alert=   [UIAlertController
+                                      alertControllerWithTitle:@"Error!"
+                                      message:@"Incorrent or Misssing Username/Password."
+                                      preferredStyle:UIAlertControllerStyleAlert];
+        
+        //This is the function to create the OK button on the alerter
+        UIAlertAction* ok = [UIAlertAction
+                             actionWithTitle:@"OK"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                                 
+                             }];
+        
+        
+        [alert addAction:ok];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+        
+    }
     
     if([[self.username text] isEqualToString:@""] || [[self.encryptPass text] isEqualToString:@""] ) {
         //NSLog(@"ITS TRUE!");
@@ -82,15 +110,15 @@
         
         
     }
-    else if (password == self.encryptPass.text) {
+    else if (tempPass == self.encryptPass.text) {
         // Send Data
         //NSDictionary *aDictionary = [[NSDictionary alloc] initWithObjectsAndKeys: usernameData, @"Name",nil];
         /*NSDictionary * aDictionary = [NSDictionary dictionaryWithObject:usernameData forKey:@"Name"];
-        NSNotification * NotifyData = [[NSNotification alloc] initWithName:@"getName" object:nil userInfo:aDictionary];
-        
-        [[NSNotificationCenter defaultCenter] postNotification:NotifyData];
-        //[[NSNotificationCenter defaultCenter] postNotificationName:@"getName" object:nil userInfo:aDictionary];
-        */
+         NSNotification * NotifyData = [[NSNotification alloc] initWithName:@"getName" object:nil userInfo:aDictionary];
+         
+         [[NSNotificationCenter defaultCenter] postNotification:NotifyData];
+         //[[NSNotificationCenter defaultCenter] postNotificationName:@"getName" object:nil userInfo:aDictionary];
+         */
         
         [[NSNotificationCenter defaultCenter] postNotificationName:@"TEST" object:self];
         
@@ -101,7 +129,7 @@
     else
     {
         NSLog(@"Nope");
-        NSLog(@"%@",password);
+        NSLog(@"%@",tempPass);
     }
 }
 

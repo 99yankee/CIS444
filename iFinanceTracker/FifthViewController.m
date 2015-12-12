@@ -10,6 +10,7 @@
 #import "FifthViewController.h"
 #import "dbModel.h"
 #import "AddAmountViewController.h"
+#import "DBManager.h"
 
 //ViewController for Overall
 @interface FifthViewController ()
@@ -17,6 +18,9 @@
     dbModel *_dbModel;
     NSArray * _getItems;
 }
+
+@property (nonatomic, strong) DBManager *dbManager;
+
 @end
 
 @implementation FifthViewController
@@ -43,33 +47,9 @@
     NSLog(@"%@", _getItems);
     
     
-    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(anyAction:) name:@"getName" object:nil];
+    // Initialize the dbManager object.
+    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"appdb.sql"];
     
-    
-    
-    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedNotification:) name:@"getName" object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedNotification:) name:@"TEST" object:nil];
-    
-}
-
--(void) receiveTestNotify: (NSNotification *) notification
-{
-    if([[notification name] isEqualToString:@"TEST"])
-        NSLog(@"Successfully received Message!");
-}
-
--(void) receivedNotification:(NSNotification*) notify
-{
-    NSString * userName = notify.name;
-    NSDictionary * info = [notify userInfo];
-    //FifthViewController *objectIWantToTransfer = [dict objectForKey:@"Name"];
-    NSLog(@"Overall: %@", info);
-    self.currentUserOverall.text = userName;
-}
-
-- (void) dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -83,12 +63,20 @@
     _getItems = items;
 }
 
-- (IBAction)viewTransactions:(UIButton *)sender {
-    
-}
-
 - (IBAction)viewOverallTransacts:(UIButton *)sender {
-
+    /*
+    NSString *personal = [NSString stringWithFormat:@"select personal from userInfo where username = 'Fun';"];
+    
+    
+    NSArray *results = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:personal]];
+    
+    personal = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"personal"]];
+    
+    NSLog(@"Personal Things: %@", personal);
+    
+    NSString *usernameData = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"username"]];
+    NSLog(@"%@",usernameData);
+*/
     //I used code from this website http://hayageek.com/uialertcontroller-example-ios/#simple
     //This is used to pop up an alerter to show the transactions
     UIAlertController * alert=   [UIAlertController

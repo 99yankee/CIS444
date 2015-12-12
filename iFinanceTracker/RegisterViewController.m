@@ -51,7 +51,7 @@
         
         UIAlertController * alert=   [UIAlertController
                                       alertControllerWithTitle:@"Error!"
-                                      message:@"Username has been used brah"
+                                      message:@"Username has been used."
                                       preferredStyle:UIAlertControllerStyleAlert];
         
         //This is the function to create the OK button on the alerter
