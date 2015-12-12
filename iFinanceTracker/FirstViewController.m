@@ -42,27 +42,23 @@
     
     // Initialize the dbManager object.
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"appdb.sql"];
+    NSString *filler;
     
+    @try {
     
-    
-    
-    NSString *personalData = [NSString stringWithFormat:@"select personal from userInfo where username = '%@'", globalUser];
-    [self.dbManager executeQuery:personalData];
-    
-    // If the query was successfully executed then pop the view controller.
-    if (self.dbManager.affectedRows != 0) {
-        
-        
-        
-        NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
-        NSLog(@"%@",personalData);
-        // Pop the view controller.
-        [self.navigationController popViewControllerAnimated:YES];
-        
-            }
-    else{
-        NSLog(@"Could not execute the query.");
+    NSString *personalData = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", globalUser];
+    NSArray *results = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:personalData]];
+    personalData = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"personal"]];
+    filler = personalData;
     }
+    
+    @catch(NSException *exception)
+    {
+        _amountSpentPersonal.text = filler;
+        
+    }
+    
+   
     
     
 
