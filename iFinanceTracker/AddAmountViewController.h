@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 //ViewController for Adding an Amount
-@interface AddAmountViewController : UIViewController <UITextViewDelegate>
+@interface AddAmountViewController : UIViewController <UITextFieldDelegate, UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *whereYouCameFrom;
 @property (strong, nonatomic)          NSString *fnameText;

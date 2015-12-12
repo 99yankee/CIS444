@@ -32,6 +32,13 @@
     _descript.delegate = self;
     self.whereYouCameFrom.text = self.fnameText;
     
+    // Do any additional setup after loading the view, typically from a nib.
+    self.totalAmount.delegate = self;
+    self.descriptField.delegate = self;
+    
+    // Initialize the dbManager object.
+    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"appdb.sql"];
+    
 }
 
 - (BOOL) textViewShouldBeginEditing:(UITextView *)textView
@@ -51,7 +58,7 @@
 - (IBAction)addTotal:(UIButton *)sender {
     
     // Prepare the query string.
-    NSString *query = [NSString stringWithFormat:@"insert * into userInfo(food, description, '%@') values('%@', '%@', '%@') where username = 'Fun'",self.whereYouCameFrom.text, self.totalAmount.text, self.descriptField.text, self.whereYouCameFrom.text];
+    NSString *query = [NSString stringWithFormat:@"insert into userInfo('%@', description) values('%f','%@')", self.whereYouCameFrom.text,[self.totalAmount.text doubleValue], self.descriptField.text];
     
     // Execute the query.
     [self.dbManager executeQuery:query];
@@ -63,7 +70,6 @@
         
         
         NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
-        NSLog(@"%@",query);
         // Pop the view controller.
         [self.navigationController popViewControllerAnimated:YES];
         
