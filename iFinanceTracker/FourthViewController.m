@@ -9,9 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "FourthViewController.h"
 #import "AddAmountViewController.h"
+#import "dbModel.h"
+#import "DBManager.h"
+#import "LoginViewController.h"
 
 //ViewController for Misc.
 @interface FourthViewController ()
+
+@property (nonatomic, strong) DBManager *dbManager;
 
 @end
 
@@ -21,7 +26,33 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    _amountSpentMisc.text = @"500";
+    //_amountSpentMisc.text = @"500";
+    
+    // Initialize the dbManager object.
+    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"appdb.sql"];
+    NSString *filler;
+    NSInteger hold;
+    NSString *miscData;
+    @try {
+        
+        miscData = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", globalUser];
+        NSMutableArray *results = [[NSMutableArray alloc] initWithArray:[self.dbManager loadDataFromDB:miscData]];
+        //Found by using breakpoints
+        filler = [[results objectAtIndex:0]objectAtIndex:6];
+        hold = [filler integerValue] + [globalMisc integerValue];
+        _amountSpentMisc.text = [NSString stringWithFormat:@"%ld", (long)hold];
+    }
+    
+    @catch(NSException *exception)
+    {
+        filler = miscData;
+        _amountSpentMisc.text = filler;
+        
+    }
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

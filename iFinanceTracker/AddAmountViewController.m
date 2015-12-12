@@ -25,6 +25,7 @@
 NSString *globalFood;
 NSString *globalPersonal;
 NSString *globalAuto;
+NSString *globalMisc;
 
 @implementation AddAmountViewController
 
@@ -62,14 +63,21 @@ NSString *globalAuto;
     //////////////////////////////////////////////////////////////////////////////////////////////////
     
     NSString *autoData = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", globalUser];
-    NSMutableArray *results = [[NSMutableArray alloc] initWithArray:[self.dbManager loadDataFromDB:autoData]];
+    NSMutableArray *resultsA = [[NSMutableArray alloc] initWithArray:[self.dbManager loadDataFromDB:autoData]];
     //Found by using breakpoints
-    globalAuto = [[results objectAtIndex:0]objectAtIndex:5];
+    globalAuto = [[resultsA objectAtIndex:0]objectAtIndex:5];
     NSLog(@"Auto: %@", globalAuto);
 
     //////////////////////////////////////////////////////////////////////////////////////////////////
-
     
+    NSString *miscData = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", globalUser];
+    NSMutableArray *resultsM = [[NSMutableArray alloc] initWithArray:[self.dbManager loadDataFromDB:miscData]];
+    //Found by using breakpoints
+    globalMisc = [[resultsM objectAtIndex:0]objectAtIndex:6];
+    NSLog(@"Misc: %@", globalMisc);
+    
+    //////////////////////////////////////////////////////////////////////////////////////////////////
+
     
     
 }
