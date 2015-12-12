@@ -45,6 +45,8 @@ NSString *globalMisc;
     // Initialize the dbManager object.
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"appdb.sql"];
     
+    @try {
+    
     //////////////////////////////////////////////////////////////////////////////////////////////////
     
     NSString *personalData = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", globalUser];
@@ -78,7 +80,12 @@ NSString *globalMisc;
     
     //////////////////////////////////////////////////////////////////////////////////////////////////
 
+    }
     
+    @catch (NSException *exception)
+    {
+        
+    }
     
 }
 
