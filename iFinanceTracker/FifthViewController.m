@@ -11,6 +11,7 @@
 #import "dbModel.h"
 #import "AddAmountViewController.h"
 #import "DBManager.h"
+#import "LoginViewController.h"
 
 //ViewController for Overall
 @interface FifthViewController ()
@@ -22,6 +23,8 @@
 @property (nonatomic, strong) DBManager *dbManager;
 
 @end
+
+
 
 @implementation FifthViewController
 
@@ -45,6 +48,7 @@
     [_dbModel downloadItems];
     NSLog(@"YIPPEE");
     NSLog(@"%@", _getItems);
+    NSLog(@"%@", globalUser);
     
     
     // Initialize the dbManager object.

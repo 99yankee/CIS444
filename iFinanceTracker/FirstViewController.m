@@ -9,6 +9,7 @@
 #import "FirstViewController.h"
 #import "dbModel.h"
 #import "AddAmountViewController.h"
+#import "LoginViewController.h"
 
 //ViewController for Personal
 @interface FirstViewController () {
@@ -33,6 +34,9 @@
     UIView *myView = [[UIView alloc] initWithFrame:CGRectMake(20.0, 200.0, 250.0, 250)];
     [myView addSubview:test];
     [self.view addSubview:myView];
+    
+    NSLog(@"%@", globalUser);
+    
 
 }
 

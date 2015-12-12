@@ -18,7 +18,10 @@
 
 @property (nonatomic, strong) DBManager *dbManager;
 
+
 @end
+
+NSString *globalUser;
 
 @implementation LoginViewController
 
@@ -111,16 +114,8 @@
         
     }
     else if (tempPass == self.encryptPass.text) {
-        // Send Data
-        //NSDictionary *aDictionary = [[NSDictionary alloc] initWithObjectsAndKeys: usernameData, @"Name",nil];
-        /*NSDictionary * aDictionary = [NSDictionary dictionaryWithObject:usernameData forKey:@"Name"];
-         NSNotification * NotifyData = [[NSNotification alloc] initWithName:@"getName" object:nil userInfo:aDictionary];
-         
-         [[NSNotificationCenter defaultCenter] postNotification:NotifyData];
-         //[[NSNotificationCenter defaultCenter] postNotificationName:@"getName" object:nil userInfo:aDictionary];
-         */
         
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"TEST" object:self];
+        globalUser = self.username.text;
         
         FifthViewController *fifth= [self.storyboard instantiateViewControllerWithIdentifier:@"tabbedView"];
         [self presentViewController:fifth animated:YES completion:nil];

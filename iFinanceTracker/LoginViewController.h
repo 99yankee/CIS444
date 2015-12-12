@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSString *globalUser;
+
 //ViewController for Login
 @interface LoginViewController : UIViewController <UITextFieldDelegate>
 
