@@ -10,12 +10,15 @@
 #import "dbModel.h"
 #import "AddAmountViewController.h"
 #import "LoginViewController.h"
+#import "DBManager.h"
 
 //ViewController for Personal
 @interface FirstViewController () {
 
     NSString *firstView;
 }
+@property (nonatomic, strong) DBManager *dbManager;
+
 
 @end
 
@@ -26,7 +29,6 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     _amountSpentPersonal.text = @"200";
-    
     //Used code from http://stackoverflow.com/questions/3421182/iphone-development-chart-from-google-api
     //This uses the google api bar graph and displays it
     UIImage *myimage = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString: @"http://chart.apis.google.com/chart?cht=bvo&chd=t:10,50,60,80,40&chl=Hello%7CWorld%7Chi&chs=300x200"]]];
@@ -36,6 +38,32 @@
     [self.view addSubview:myView];
     
     NSLog(@"%@", globalUser);
+    
+    
+    // Initialize the dbManager object.
+    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"appdb.sql"];
+    
+    
+    
+    
+    NSString *personalData = [NSString stringWithFormat:@"select personal from userInfo where username = '%@'", globalUser];
+    [self.dbManager executeQuery:personalData];
+    
+    // If the query was successfully executed then pop the view controller.
+    if (self.dbManager.affectedRows != 0) {
+        
+        
+        
+        NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
+        NSLog(@"%@",personalData);
+        // Pop the view controller.
+        [self.navigationController popViewControllerAnimated:YES];
+        
+            }
+    else{
+        NSLog(@"Could not execute the query.");
+    }
+    
     
 
 }
