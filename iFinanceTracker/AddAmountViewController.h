@@ -10,6 +10,7 @@
 
 extern NSString *globalFood;
 extern NSString *globalPersonal;
+extern NSString *globalAuto;
 
 
 

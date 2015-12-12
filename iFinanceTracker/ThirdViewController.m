@@ -9,9 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "ThirdViewController.h"
 #import "AddAmountViewController.h"
+#import "dbModel.h"
+#import "DBManager.h"
+#import "LoginViewController.h"
 
 //ViewController for Auto & Transportatioin
 @interface ThirdViewController ()
+
+@property (nonatomic, strong) DBManager *dbManager;
 
 @end
 
@@ -21,7 +26,28 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    _amountSpentAuto.text = @"400";
+    // Initialize the dbManager object.
+    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"appdb.sql"];
+    NSString *filler;
+    NSInteger hold;
+    NSString *autoData;
+    @try {
+        
+        autoData = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", globalUser];
+        NSMutableArray *results = [[NSMutableArray alloc] initWithArray:[self.dbManager loadDataFromDB:autoData]];
+        //Found by using breakpoints
+        filler = [[results objectAtIndex:0]objectAtIndex:5];
+        hold = [filler integerValue] + [globalAuto integerValue];
+        _amountSpentAuto.text = [NSString stringWithFormat:@"%ld", (long)hold];
+    }
+    
+    @catch(NSException *exception)
+    {
+        filler = autoData;
+        _amountSpentAuto.text = filler;
+        
+    }
+
     
 }
 
@@ -63,7 +89,7 @@
     NSLog(@"prepareForSegue: %@", segue.identifier);
     if([segue.identifier isEqualToString:@"Auto"])
     {
-        transferViewController.fnameText = @"Auto & Transport";
+        transferViewController.fnameText = @"auto";
         
         
     }

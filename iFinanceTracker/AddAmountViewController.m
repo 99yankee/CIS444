@@ -24,6 +24,7 @@
 
 NSString *globalFood;
 NSString *globalPersonal;
+NSString *globalAuto;
 
 @implementation AddAmountViewController
 
@@ -43,18 +44,33 @@ NSString *globalPersonal;
     // Initialize the dbManager object.
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"appdb.sql"];
     
+    //////////////////////////////////////////////////////////////////////////////////////////////////
     
     NSString *personalData = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", globalUser];
     NSArray *resultsP = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:personalData]];
     globalPersonal = [[resultsP objectAtIndex:0]objectAtIndex:3];
     NSLog(@"Personal: %@", globalPersonal);
     
+    //////////////////////////////////////////////////////////////////////////////////////////////////
+    
     NSString *foodData = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", globalUser];
     NSMutableArray *resultsF = [[NSMutableArray alloc] initWithArray:[self.dbManager loadDataFromDB:foodData]];
     //Found by using breakpoints
     globalFood = [[resultsF objectAtIndex:0]objectAtIndex:4];
     NSLog(@"Food: %@", globalFood);
+    
+    //////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    NSString *autoData = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", globalUser];
+    NSMutableArray *results = [[NSMutableArray alloc] initWithArray:[self.dbManager loadDataFromDB:autoData]];
+    //Found by using breakpoints
+    globalAuto = [[results objectAtIndex:0]objectAtIndex:5];
+    NSLog(@"Auto: %@", globalAuto);
 
+    //////////////////////////////////////////////////////////////////////////////////////////////////
+
+    
+    
     
 }
 
