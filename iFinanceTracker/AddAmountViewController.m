@@ -23,6 +23,7 @@
 @end
 
 NSString *globalFood;
+NSString *globalPersonal;
 
 @implementation AddAmountViewController
 
@@ -43,11 +44,16 @@ NSString *globalFood;
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"appdb.sql"];
     
     
+    NSString *personalData = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", globalUser];
+    NSArray *resultsP = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:personalData]];
+    globalPersonal = [[resultsP objectAtIndex:0]objectAtIndex:3];
+    NSLog(@"Personal: %@", globalPersonal);
+    
     NSString *foodData = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", globalUser];
-    NSMutableArray *results = [[NSMutableArray alloc] initWithArray:[self.dbManager loadDataFromDB:foodData]];
+    NSMutableArray *resultsF = [[NSMutableArray alloc] initWithArray:[self.dbManager loadDataFromDB:foodData]];
     //Found by using breakpoints
-    globalFood = [[results objectAtIndex:0]objectAtIndex:4];
-    NSLog(@"%@", globalFood);
+    globalFood = [[resultsF objectAtIndex:0]objectAtIndex:4];
+    NSLog(@"Food: %@", globalFood);
 
     
 }

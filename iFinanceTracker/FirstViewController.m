@@ -44,13 +44,15 @@
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"appdb.sql"];
     NSString *filler;
     NSString *personalData;
+    NSInteger hold;
     
     @try {
     
     personalData = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", globalUser];
     NSArray *results = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:personalData]];
     filler = [[results objectAtIndex:0]objectAtIndex:3];
-        _amountSpentPersonal.text = filler;
+    hold = [filler integerValue] + [globalPersonal integerValue];
+    _amountSpentPersonal.text = [NSString stringWithFormat:@"%ld", (long)hold];
     }
     
     @catch(NSException *exception)
