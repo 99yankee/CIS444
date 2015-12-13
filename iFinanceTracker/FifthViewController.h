@@ -25,6 +25,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *autoField;
 @property (weak, nonatomic) IBOutlet UILabel *miscField;
 
-
+extern NSString *overallTotal;
 
 @end

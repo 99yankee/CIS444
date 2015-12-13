@@ -29,7 +29,7 @@
 
 @end
 
-
+NSString *overallTotal;
 
 @implementation FifthViewController
 
@@ -59,6 +59,9 @@
     self.autoField.text = globalSumAuto;
     self.miscField.text = globalSumMisc;
     
+    NSInteger store = [globalSumPersonal integerValue] + [globalSumFood integerValue] + [globalSumAuto integerValue] + [globalSumMisc integerValue];
+    overallTotal = [NSString stringWithFormat:@"%ld",(long)store];
+    self.amountSpent.text = overallTotal;
     
 }
 
