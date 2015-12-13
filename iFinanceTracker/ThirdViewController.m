@@ -34,7 +34,8 @@ NSString *globalSumAuto;
     NSString *autoData;
     NSInteger b;
     @try {
-        
+        //Selects data from a specific index in the database for a specific user and puts it
+        //into the text field.  
         autoData = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", globalUser];
         NSArray *results = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:autoData]];
         b = [filler intValue];
@@ -46,6 +47,7 @@ NSString *globalSumAuto;
     
     @catch(NSException *exception)
     {
+        //Reaches here if a user doesn't exist; Exception was thrown
         filler = autoData;
         _amountSpentAuto.text = globalSumAuto;
         

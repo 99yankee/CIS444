@@ -33,7 +33,8 @@ NSString *globalSumFood;
     NSString *foodData;
     NSInteger b;
     @try {
-        
+        //Selects data from a specific index in the database for a specific user and puts it
+        //into the text field
         foodData = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", globalUser];
         NSArray *results = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:foodData]];
         b = [filler intValue];
@@ -47,6 +48,7 @@ NSString *globalSumFood;
     
     @catch(NSException *exception)
     {
+        //Reaches here if a user doesn't exist; Exception was thrown
         filler = foodData;
         _amountSpentFood.text = globalSumFood;
         

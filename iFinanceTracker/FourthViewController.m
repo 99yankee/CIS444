@@ -37,6 +37,8 @@ NSString *globalSumMisc;
     NSInteger b;
     @try {
         
+        //Selects data from a specific index in the database for a specific user and puts it
+        //into the text field.
         miscData = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", globalUser];
         NSArray *results = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:miscData]];
         b = [filler intValue];
@@ -48,6 +50,7 @@ NSString *globalSumMisc;
     
     @catch(NSException *exception)
     {
+        //Reaches here if a user doesn't exist; Exception was thrown
         filler = miscData;
         _amountSpentMisc.text = globalSumMisc;
         

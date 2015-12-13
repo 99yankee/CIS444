@@ -36,40 +36,29 @@ NSString *overallTotal;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    _amountSpent.text = @"100";
-    
-  
-    
+    _amountSpent.text = @"0";
     
     _getItems = [[NSArray alloc] init];
     _dbModel = [[dbModel alloc] init];
     _dbModel.delegate = self;
     [_dbModel downloadItems];
     
-    
-    
-    
     // Initialize the dbManager object.
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"appdb.sql"];
  
     //Sets the fields on the Overall Page
-    
     self.personalField.text = globalSumPersonal;
     self.foodField.text = globalSumFood;
     self.autoField.text = globalSumAuto;
     self.miscField.text = globalSumMisc;
     
+    //Sums up the total of all 4 global variables and displays in the overall text field
     NSInteger store = [globalSumPersonal integerValue] + [globalSumFood integerValue] + [globalSumAuto integerValue] + [globalSumMisc integerValue];
     overallTotal = [NSString stringWithFormat:@"%ld",(long)store];
     self.amountSpent.text = overallTotal;
     
 }
 
-
-
--(void) dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -30,13 +30,7 @@ NSString *globalSumPersonal;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
-    _amountSpentPersonal.text = @"0";
    
-    
-    NSLog(@"%@", globalUser);
-    
-    
     // Initialize the dbManager object.
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"appdb.sql"];
     NSString *personalData;
@@ -45,6 +39,8 @@ NSString *globalSumPersonal;
     
     @try {
     
+        //Selects data from a specific index in the database for a specific user and puts it
+        //into the text field
         personalData = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", globalUser];
         NSArray *results = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:personalData]];
         b = [filler intValue];
@@ -56,6 +52,7 @@ NSString *globalSumPersonal;
     
     @catch(NSException *exception)
     {
+        //Reaches here if a user doesn't exist; Exception was thrown
         filler = personalData;
         _amountSpentPersonal.text = globalSumPersonal;
         

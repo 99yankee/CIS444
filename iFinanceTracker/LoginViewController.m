@@ -31,19 +31,19 @@ NSString *filler;
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    //Sets placeholders for user and pass fields
     _username.placeholder = @"Username";
-    
     _encryptPass.placeholder = @"Password";
     _encryptPass.secureTextEntry = YES;
     
     self.username.delegate = self;
     self.encryptPass.delegate = self;
 
-    
+    //Brings in the database
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"appdb.sql"];
     
 
-    
+    //Cancels out the filler variable so there are no potential issues
     filler = @"0";
     
 }
@@ -60,6 +60,7 @@ NSString *filler;
     BOOL isCatch = FALSE;
     @try {
         
+        //If user doesn't exist, this will throw an exception because they have no data to access
         NSString *password = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", self.username.text];
 
         NSArray *results = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:password]];
@@ -76,6 +77,7 @@ NSString *filler;
     }
     @catch (NSException *exception){
         isCatch = true;
+        //If there are missing fields, alertview will present user with a message
         UIAlertController * alert=   [UIAlertController
                                       alertControllerWithTitle:@"Error!"
                                       message:@"Incorrent or Misssing Username/Password."
@@ -124,6 +126,7 @@ NSString *filler;
         }
         else if (tempPass == self.encryptPass.text) {
         
+            //If username and password are valid, grant access to User.
             globalUser = self.username.text;
         
             FifthViewController *fifth= [self.storyboard instantiateViewControllerWithIdentifier:@"tabbedView"];

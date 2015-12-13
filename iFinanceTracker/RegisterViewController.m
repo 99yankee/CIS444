@@ -45,6 +45,7 @@
 - (IBAction)saveInfo:(UIButton *)sender {
     
     @try {
+        //Checks if username already exists, if it does it will present user with an error.
         NSString *usernameData = [NSString stringWithFormat:@"select * from userInfo where username = '%@'", self.username.text];
         NSArray *results = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:usernameData]];
         usernameData = [[results objectAtIndex:0] objectAtIndex:[self.dbManager.arrColumnNames indexOfObject:@"username"]];
@@ -70,6 +71,7 @@
         
     }
     @catch (NSException *exception) {
+        //Checks to see if any of the fields are empty
         if([[self.username text] isEqualToString:@""] || [[self.password text] isEqualToString:@""]  || [[self.email text] isEqualToString:@""]) {
             UIAlertController * alert=   [UIAlertController
                                           alertControllerWithTitle:@"Error!"
@@ -95,6 +97,8 @@
         
         
         else{
+            
+            //If user is not in database, creates the user
             
             // Prepare the query string.
             NSString *query = [NSString stringWithFormat:@"insert into userInfo values('%@', '%@', '%@', null, null, null, null, null, null, null)", self.username.text, self.password.text, self.email.text];

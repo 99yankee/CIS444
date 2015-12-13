@@ -26,9 +26,6 @@
     //LOOK UP DHCP
     NSURL *jsonFileUrl = [NSURL URLWithString:@"http://localhost:8888/services.php"];
     
-    //Create the Request
-    //REMOVE IF OTHER CODE WORKS SUCCESSFULLY
-    //NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:jsonFileUrl];
     
     //Create the URL Connection Session
     NSURLSession *session = [NSURLSession sharedSession];
@@ -40,9 +37,7 @@
                 
             }] resume];
     
-    //REMOVE IF OTHER CODE WORKS SUCCESSFULLY
-    //NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    //NSURLSession *session = [NSURLSession sessionWithConfiguration:urlRequest delegate:self delegateQueue: nil];
+    
 }
 
 #pragma mark NSURLConnectionDataProtocol Methods
