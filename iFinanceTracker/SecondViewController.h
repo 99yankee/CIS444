@@ -12,9 +12,6 @@
 //ViewController for Food
 @interface SecondViewController : UIViewController
 
-
-- (IBAction)viewFoodTransacts:(UIButton *)sender;
-
 @property (strong, nonatomic) IBOutlet UILabel *amountSpentFood;
 @property (weak, nonatomic) IBOutlet UILabel *currentUserFood;
 

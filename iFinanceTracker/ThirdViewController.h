@@ -11,8 +11,6 @@
 //ViewController for Auto & Transportatioin
 @interface ThirdViewController : UIViewController
 
-- (IBAction)viewAutoTransacts:(UIButton *)sender;
-
 
 @property (strong, nonatomic) IBOutlet UILabel *amountSpentAuto;
 
